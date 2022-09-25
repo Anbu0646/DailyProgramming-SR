@@ -1,4 +1,4 @@
-The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output sections. 
+/*The program must accept an integer N as the input. The program must print the desired pattern as shown in the Example Input/Output sections. 
 
 Boundary Condition(s): 1 <= N <= 20 
 
@@ -28,7 +28,7 @@ Output: 0
 Solution:
 
 C:
-
+*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -51,12 +51,7 @@ int main()
 
 }
 
-
-
-
-
-
-
+/*
 PYTHON:
 
 n=int(input())
@@ -65,3 +60,4 @@ print(s)
 for i in range(n, 0, -1):
     s=str(i) + s + str(i)
     print(s)
+*/
