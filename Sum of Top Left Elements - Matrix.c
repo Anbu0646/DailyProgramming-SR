@@ -1,4 +1,4 @@
-The program must accept an integer matrix of size rxc as the input. the program must print the sum of top left quadrant elements as the output. 
+/*The program must accept an integer matrix of size rxc as the input. the program must print the sum of top left quadrant elements as the output. 
 
 Boundary condition(s): 1 <= r, c <= 99 
 
@@ -17,6 +17,7 @@ Output: 14
 
 
 Solution:
+*/
 
 #include<stdio.h>
 #include<stdlib.h>
