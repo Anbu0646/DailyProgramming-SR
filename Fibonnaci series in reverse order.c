@@ -1,3 +1,4 @@
+/*
 The program must accept an integer N as the input. The program must print the fibonacci series in the reverse order as the output. 
 
 Boundary Condition(s): 5 <= N <= 85 
@@ -20,6 +21,7 @@ SOLUTION:
 
 C:
 
+*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -33,7 +35,7 @@ int main()
     for(int i=n-1; i>=0; printf("%lld ",a[i--]));
 }
 
-
+/*
 PYTHON:
 
 #GoodBoyzCODINGforDAILYCHALLENGE:
@@ -43,3 +45,4 @@ l[0], l[1] = 0, 1
 for i in range(2, n):
         l[i]=l[i - 1]+l[i - 2]
 print(*l[::-1])
+*/
