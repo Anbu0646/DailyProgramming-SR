@@ -18,10 +18,9 @@ Output: 89 55 34 21 13 8 5 3 2 1 1 0
 
 
 SOLUTION:
-
 C:
-
 */
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -36,8 +35,8 @@ int main()
 }
 
 /*
-PYTHON:
 
+PYTHON:
 #GoodBoyzCODINGforDAILYCHALLENGE:
 n=int(input())
 l=[0]*n
@@ -45,4 +44,5 @@ l[0], l[1] = 0, 1
 for i in range(2, n):
         l[i]=l[i - 1]+l[i - 2]
 print(*l[::-1])
+
 */
