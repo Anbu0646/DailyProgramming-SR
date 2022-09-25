@@ -1,3 +1,4 @@
+/*
 The program must accept an integer N as the input. The program must print the digits surrounded by even digits on both sides. The first and last digits have only one digit adjacent digit to them. So consider only the single adjacent digit for them. If there is no digit surrounded by even digits, then the program must print -1 as the output. 
 
 Boundary Condition(s): 11 <= N <= 999999999 
@@ -26,7 +27,9 @@ Output: -1
 
 
 SOLUTION:
-
+C:
+*/
+//start of code
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -52,14 +55,9 @@ int main()
     if(f==0){
         printf("-1");
     }
-}
+}//end of code
 
-
-
-
-
-ALTER:
-
+//ALTER:
 #include<stdio.h>
 #include<stdlib.h>
 int main()
