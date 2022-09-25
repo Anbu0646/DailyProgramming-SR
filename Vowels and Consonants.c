@@ -1,4 +1,5 @@
-/*The program must a string S as the input. The program must print all the vowels in the string followed by all the consonants in the string as the output.
+/*
+The program must a string S as the input. The program must print all the vowels in the string followed by all the consonants in the string as the output.
 
 Boundary condition(s): 1 <= length of s <= 200 
 
@@ -17,7 +18,6 @@ Output: EEOEEOUHTRGNS
 
 
 SOLUTION:
-
 C:
 */
 #include<stdio.h>
