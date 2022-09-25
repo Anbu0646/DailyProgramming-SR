@@ -51,10 +51,10 @@ int main()
 /*
 
 PYTHON:
-
 x,y = map(int, input().split())
 for i in range(x, y + 1):
     if (i > 9 and len(set(str(i))) == 1):
         continue
     print(i, end=' ')
+    
 */
