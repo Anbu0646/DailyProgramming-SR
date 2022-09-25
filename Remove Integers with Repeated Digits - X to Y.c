@@ -1,3 +1,4 @@
+/*
 The program must accept two integers X and Y as the input. The program must print all the integers from X to Y which do not have continuously repeated digits that is the digits are repeated and all the digits in the number are same. 
 
 Boundary Condition(s): 1 <= X <= Y X <= Y <= 1000000 
@@ -22,7 +23,7 @@ Output: 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17 18 19 20 21 23 24 25 26 27 28 29 
 Solution:
 
 C:
-
+*/
 #include<stdio.h>
 #include<stdlib.h>
 int main()
@@ -34,7 +35,6 @@ int main()
         int p=i;
         int q=i%10;
         f=1;
-        
         while(p>0 )
         {
             int s=p%10;
@@ -51,7 +51,7 @@ int main()
 
 
 
-
+/*
 
 PYTHON:
 
@@ -60,3 +60,4 @@ for i in range(x, y + 1):
     if (i > 9 and len(set(str(i))) == 1):
         continue
     print(i, end=' ')
+*/
