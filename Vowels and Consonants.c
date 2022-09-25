@@ -20,6 +20,7 @@ Output: EEOEEOUHTRGNS
 SOLUTION:
 C:
 */
+
 #include<stdio.h>
 #include<stdlib.h>
 int main()
