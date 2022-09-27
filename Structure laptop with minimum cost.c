@@ -54,25 +54,29 @@ int main()
   }
   int minu=100000000;
      int storage;
-     char suba[1001];
-     int xflag=0,yflag=0;
-     for(int i=0;i<N;i++){
-         if(laptops[i].cost<minu){
+     char sax[1001];
+     int xflag=0, yflag=0;
+     for(int i=0;i<N;i++)
+     {
+         if(laptops[i].cost<minu)
+         {
              minu=laptops[i].cost;
-             if(laptops[i].X==1){
-                 strcpy(suba,laptops[i].nameOrNum.brandName);
+             if(laptops[i].X==1)
+             {
+                 strcpy(sax, laptops[i].nameOrNum.brandName);
                  xflag=1;
             
              }
-             else{
+             else
+             {
                  storage=laptops[i].nameOrNum.productNumber;
                  xflag=0;
              }
          }
      }
      if(xflag==0)
-     printf("%d",storage);
+        printf("%d", storage);
      else
-     printf("%s",suba);
+        printf("%s", sax);
   return 0;
 }
