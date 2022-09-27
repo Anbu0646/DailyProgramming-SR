@@ -52,6 +52,27 @@ int main()
       scanf("%d %d",&laptops[index].nameOrNum.productNumber,&laptops[index].cost); 
     } 
   }
-  
+  int minu=100000000;
+     int storage;
+     char suba[1001];
+     int xflag=0,yflag=0;
+     for(int i=0;i<N;i++){
+         if(laptops[i].cost<minu){
+             minu=laptops[i].cost;
+             if(laptops[i].X==1){
+                 strcpy(suba,laptops[i].nameOrNum.brandName);
+                 xflag=1;
+            
+             }
+             else{
+                 storage=laptops[i].nameOrNum.productNumber;
+                 xflag=0;
+             }
+         }
+     }
+     if(xflag==0)
+     printf("%d",storage);
+     else
+     printf("%s",suba);
   return 0;
 }
