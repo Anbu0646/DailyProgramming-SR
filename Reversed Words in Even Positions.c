@@ -23,15 +23,15 @@ Solution:
 
 int main()
 {
-    char arrr[1001][1001];
-    int leng=0,count=0;
-    while(scanf("%s",arrr[leng++])>0);
-    for(int ctr=leng-1;ctr>=0;ctr--){
-        if((count+1)%2==0){
-             printf("%s",arrr[ctr]);
-        }else{
-            int l=strlen(arrr[ctr]);
-            for(int kd=l-1;kd>=0;printf("%c",arrr[ctr][kd--]));
+    char array[1001][1001];
+    int Length=0, count=0;
+    while(scanf("%s", arrr[Length++])>0);
+    for(int ctr=leng-1; ctr>=0; ctr--){
+        if((count+1)%2==0)
+             printf("%s", array[ctr]);
+        else{
+            int length=strlen(array[ctr]);
+            for(int kd=length-1; kd>=0; printf("%c",array[ctr][kd--]));
         }
         printf(" "); count++;
     }
