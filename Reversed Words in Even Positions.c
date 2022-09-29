@@ -27,7 +27,7 @@ int main()
     char array[1001][1001];
     int length=0, count=0;
     while(scanf("%s", array[length++])>0);
-    for(int ctr=leng-1; ctr>=0; ctr--){
+    for(int ctr=length-1; ctr>=0; ctr--){
         if((count+1)%2==0)
              printf("%s", array[ctr]);
         else{
