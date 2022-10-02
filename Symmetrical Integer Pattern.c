@@ -36,7 +36,7 @@ C:
 int main()
 {
     int n;
-    scanf("%d",&n);
+    scanf("%d", &n);
     printf("0\n");
     for(int i=0; i<n; i++){
         for(int j=n-i; j<=n; j++){
@@ -51,14 +51,3 @@ int main()
     
 
 }
-
-/*
-PYTHON:
-
-n=int(input())
-s='0'
-print(s)
-for i in range(n, 0, -1):
-    s=str(i) + s + str(i)
-    print(s)
-*/
