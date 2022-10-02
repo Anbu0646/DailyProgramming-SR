@@ -46,38 +46,13 @@ int main()
 int main()
 {
     int a;
-    scanf("%d",&a);
-    for(int i=1;i<=a;printf("\n"),i++){
-        
-        for(int j=1;j<=a;j++){
-            if(a-i+1==j || i==j || j==1 || j==a || i==1 || i==a){
+    scanf("%d", &a);
+    for(int i=1; i<=a; printf("\n"), i++){
+        for(int j=1; j<=a; j++){
+            if(a-i+1==j || i==j || j==1 || j==a || i==1 || i==a)
                 printf("*");
-            }
-            else{
+            else
                 printf("-");
-            }
         }
     }
 }
-
-//=>UNFOUNDER & Ragav
-/*
-#GoodBoyzCoding0646 & MeMyselfandJ:
-n=int(input())
-for i in range(0, n):
-    for j in range(0, n):
-        print("*", end=""if(i==j or i==0 or j==0 or j==n - 1 or i==n - 1 or (i+j+1)==n) else "-", end="")
-          
- #GoodBoyzCoding0646 & MeMyselfandJ:
-n=int(input())
-for i in range(0, n):
-    for j in range(0, n):
-        print(("*", end="")if(i==j or i==0 or j==0 or j==n - 1 or i==n - 1 or (i+j+1)==n) else ("-", end=""))
- */ 
-#GoodBoyzCoding0646 & MeMyselfandJ:
-n=int(input())
-for i in range(0, n):
-    for j in range(0, n):
-        if(i==j or i==0 or j==0 or j==n-1 or i==n-1 or i+j+1==n):print("*", end="")
-        else:print("-", end="")
-    print()
