@@ -33,16 +33,3 @@ int main()
     for(int i=2; i<n; a[i]=a[i-1]+a[i-2], i++);
     for(int i=n-1; i>=0; printf("%lld ",a[i--]));
 }
-
-/*
-
-PYTHON:
-#GoodBoyzCODINGforDAILYCHALLENGE:
-n=int(input())
-l=[0]*n
-l[0], l[1] = 0, 1
-for i in range(2, n):
-        l[i]=l[i - 1]+l[i - 2]
-print(*l[::-1])
-
-*/
