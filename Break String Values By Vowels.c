@@ -30,3 +30,24 @@ Explanation : The string values "da", "ef", "if" and "of" contains exactly one v
               
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+char str[101];
+scanf("%s", &str);
+int l=strlen(str), c=0;
+for(int i=0; i<l; i++)
+{  
+    char ch=str[i];
+    if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+        c++;
+    if(c>1)
+    {
+        printf("\n");
+        c=1;
+    }
+printf("%c", str[i]);
+}
