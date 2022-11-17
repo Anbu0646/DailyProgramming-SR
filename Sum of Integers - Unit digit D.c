@@ -24,3 +24,19 @@ Output: -1
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, d, s=0, f=0;
+    scanf("%d %d", &n, &d);
+    for(int i=1; i<=n; i++)
+        if(i%10==d)
+        {
+            s+=i;
+            f=1;
+        }
+    printf("%d", (f==1)?s:-1);
+    return 0;
+}
