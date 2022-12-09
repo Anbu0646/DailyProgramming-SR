@@ -27,4 +27,4 @@ Output: 6744245
 '''
 #EloisewithJ&O
 n, x = input().strip(), int(input())
-print(n[-1:x-1:-1])
+print(n[:-x]+n[-x:][::-1])
