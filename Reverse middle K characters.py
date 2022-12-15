@@ -39,3 +39,12 @@ x=(l-n)//2
 for i in range(x): print(s[i], end="")
 for j in range(x+n-1, x-1, -1): print(s[j], end="")
 for k in range(x+n, l): print(s[k], end="")
+  
+'''
+Alternate code:
+
+s=input().strip()
+n=int(input())
+l=(len(s)-n)//2
+print(s[:l]+s[l:-l-1][::-1]+s[-l-1:])
+'''
