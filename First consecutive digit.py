@@ -20,6 +20,14 @@ output: 60
 
 SOLUTION:
 '''
+
+s=input().strip()
+k=int(s[0])%2
+for i in s:
+    if int(i)%2==k: print(i,end="")
+    else: break 
+        
+'''
 S=input().strip()
 if S[0] in '13579':
     for ch in S:
@@ -31,3 +39,4 @@ else:
         if ch not in '24680':
             break
         print(ch,end='')
+'''
