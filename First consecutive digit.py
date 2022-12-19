@@ -20,3 +20,14 @@ output: 60
 
 SOLUTION:
 '''
+S=input().strip()
+if S[0] in '13579':
+    for ch in S:
+        if ch not in '13579':
+            break
+        print(ch,end='')
+else:
+    for ch in S:
+        if ch not in '24680':
+            break
+        print(ch,end='')
