@@ -1,5 +1,7 @@
 '''
-The program must accept a string S as the input. The program must print the alphabets of S in reversal alphabetical order as the output. Note: The string S always contain only lowercase alphabets.
+The program must accept a string S as the input. The program must print the alphabets of S in reversal alphabetical order as the output. 
+
+Note: The string S always contain only lowercase alphabets.
 
 Boundary Condition(s): 1 <= Length of S <= 100
 
