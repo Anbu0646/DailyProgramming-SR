@@ -26,4 +26,6 @@ Output: 0 1 1 1
 
 SOLUTION:
 '''
-
+#WednesdaywithJ&A
+int(input())
+print(*sorted(list(map(int, input().split()))))
