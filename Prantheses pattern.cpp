@@ -34,12 +34,13 @@ using namespace std;
 int main(int argc, char** argv)
 {
     int a;
-    scanf("%d",&a);
+    scanf("%d", &a);
     int l=a, m=a+1;
     string str="";
     for(int i=1; i<=a; printf("\n"), i++)
     {
-        for(int j=1;j<=2*a;j++){
+        for(int j=1; j<=2*a; j++)
+        {
             if(j>=l && j<=a)
             {
                 printf("(");
@@ -60,7 +61,7 @@ int main(int argc, char** argv)
     m++;
     str+='\n';
     }
-    for(int i=str.length()-(a+a)-3;i>=0;i--)
+    for(int i=str.length()-(a+a)-3; i>=0; i--)
     {
         cout << str[i];
     }
