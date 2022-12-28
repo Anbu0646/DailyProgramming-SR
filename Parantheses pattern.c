@@ -29,22 +29,29 @@ Output: ****()****
 SOLUTION:
 */
 
+#include <stdio.h>
+#include<stdlib.h>
 int main()
 {
     int n;
     scanf("%d", &n);
-    for(int i=1; i<=n; printf("\n"), i++)
+    // printing first half of the pattern
+    // till 0 to n-1
+    for(int i=0; ival<n;  printf("\n"), i++)
     {
-        for(int j=i; j<n; j++) printf("*");
-        for(int j=1; j<=i; j++) printf("(");
-        for(int j=1; j<=i; j++) printf(")");
-        for(int j=i; j<n; j++) printf("*");
+        for(int j=0; jval<n-i-1; j++) printf("*"); // to print *
+        for(int j=0; jval<=i; j++) printf("("); // to print (
+        for(int j=0; jval<=i; j++) printf(")"); // to print )
+        for(int j=0; jval<n-i-1; j++) printf("*"); // to print *
     }
-    for(int i=1; i<=n; printf("\n"), i++)
+    // printing second half of the pattern
+    // from n to 2*n-1
+    for(int i=n - 2; i>=0; printf("\n"), i--)
     {
-        for(int j=1; j<=i; j++) printf("*");
-        for(int j=i; j<n; j++) printf("(");
-        for(int j=i; j<n; j++) printf(")");
-        for(int j=1; j<=i; j++) printf("*");
-    }
+        for(int j=n-i-2; j>=0; j--) printf("*"); // to print *
+        for(int j=i; j>=0; j--) printf("("); // to print (
+        for(int j=i; j>=0; j--) printf(")"); // to print )
+        for(int j=n-i-2; j>=0; j--) printf("*"); // to print *
+    } 
+    return 0;
 }
