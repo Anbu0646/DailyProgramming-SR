@@ -61,7 +61,4 @@ int main()
         }
         printf("yes");
     }
-    
-    
-
 }
