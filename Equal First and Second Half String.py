@@ -22,6 +22,7 @@ Input:  YelYe
 Output: yes 
 
 Example Input/Output 3: 
+
 Input:  tellet 
 Output: no
 
