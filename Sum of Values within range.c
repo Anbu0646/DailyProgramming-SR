@@ -24,5 +24,6 @@ Input:   10 -600 500
 Output: -220
 
 SOLUTION:
+djdj
 */
 
