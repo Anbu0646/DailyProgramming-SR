@@ -24,6 +24,25 @@ Input:   10 -600 500
 Output: -220
 
 SOLUTION:
-djdj
+
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n, lv, hv, sum = 0;
+    cin >> n >> lv >> hv;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+    }
+    for(int i = 0; i < n; i++){
+        if(lv <= arr[i] && arr[i] <= hv){
+            sum += arr[i];
+        }
+    }
+    cout << sum;
+}
