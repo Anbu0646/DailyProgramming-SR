@@ -34,7 +34,7 @@ SOLUTION:
 int main()
 {
     int n, x;
-    scanf("%d %d",&n,&x);
+    scanf("%d %d", &n, &x);
     int ar[n], count = 0;
     for(int i = 1; i <= n; i++)
     {
@@ -50,7 +50,7 @@ int main()
     }
     if((count) % 2 == 1)
     {
-        printf("%d",ar[count/2]);
+        printf("%d", ar[count/2]);
     }
 
 }
