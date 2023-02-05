@@ -28,3 +28,29 @@ Output: 3 30 6 27 9 24 12 21 15 18
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, x;
+    scanf("%d %d",&n,&x);
+    int ar[n], count = 0;
+    for(int i = 1; i <= n; i++)
+    {
+        if(i % x == 0)
+        {
+            ar[count++] = i;
+        }
+    }
+    for(int i = 0; i < count/2; i++)
+    {
+        printf("%d ", ar[i]);
+        printf("%d ", ar[count - 1 - i]);
+    }
+    if((count) % 2 == 1)
+    {
+        printf("%d",ar[count/2]);
+    }
+
+}
