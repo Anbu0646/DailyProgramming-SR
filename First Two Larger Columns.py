@@ -46,3 +46,32 @@ Output: 24 32
         
  SOLUTION:
  '''
+n = int(input())
+matrix = zip(*[list(map(int, input().split())) for i in range(n)])
+matrix = sorted(matrix, key=max, reverse=True)
+for i in range(n): print(matrix[0][i], matrix[1][i])
+      
+'''
+n=int(input())
+l=[list(map(int,input().split())) for _ in range(n)]
+
+m=0
+mc1=0
+for r in range(n):
+    for c in range(n):
+        if l[r][c]>m:
+            mc1=c
+            m=l[r][c]
+
+m=0
+mc2=0
+for r in range(n):
+    for c in range(n):
+        if c!=mc1:
+            if l[r][c]>m:
+                mc2=c
+                m=l[r][c]
+
+for r in range(n):
+    print(l[r][mc1],l[r][mc2])
+'''
