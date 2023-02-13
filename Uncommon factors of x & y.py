@@ -40,3 +40,18 @@ if(sum(d)==0):
     print(-1)
 else:
     print(*d)
+    
+    
+'''
+
+Aliter:
+
+def factors(n):
+    return [i for i in range(1,n+1) if n%i==0]
+x,y=map(int,input().split())
+a,b=factors(x),factors(y)
+c=[i for i in a if i not in b]+[i for i in b if i not in a]
+if c: print(*sorted(c))
+else: print(-1)
+
+'''
