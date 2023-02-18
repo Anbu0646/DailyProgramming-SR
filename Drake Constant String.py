@@ -32,8 +32,6 @@ for i in a:
     if i not in 'aeiou': count+=1
 
 for i in a:
+    print(count, end=" ")
     if i not in 'aeiou':
-        print(count, end=" ")
         count-=1
-    else:
-        print(count, end=" ")
