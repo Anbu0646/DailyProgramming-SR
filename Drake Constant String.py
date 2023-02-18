@@ -24,3 +24,16 @@ Explanation: from t to h - 6 consonants.
 
 SOLUTION:
 '''
+
+a=input().strip()
+count = 0
+
+for i in a:
+    if i not in 'aeiou': count+=1
+
+for i in a:
+    if i not in 'aeiou':
+        print(count, end=" ")
+        count-=1
+    else:
+        print(count, end=" ")
