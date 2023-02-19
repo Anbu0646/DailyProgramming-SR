@@ -33,7 +33,22 @@ n, s = map(int, input().split())
 l=list(map(int, input().split()))
 
 for i in range(1, n+1):
+    c=0 
+    for j in range(i, n+1, i):
+        c+=l[j - 1]
+    if(c==s):
+        print(i)
+        break
+
+'''
+Aliter:
+
+n, s = map(int, input().split())
+l=list(map(int, input().split()))
+
+for i in range(1, n+1):
     c=sum(l[j - 1] for j in range(1, n+1) if j % i == 0)
     if(c==s):
         print(i)
         break
+'''
