@@ -42,3 +42,15 @@ Output: 1
 
 SOLUTION:
 '''
+
+N,K=map(int,input().split())
+count=0
+for ctr in range(1,N+1):
+    word=input().strip()
+    nonRepeatCount=0
+    for ch in word:
+        if word.count(ch)==1:
+            nonRepeatCount+=1
+    if nonRepeatCount<=K:
+        count+=1
+print(count)
