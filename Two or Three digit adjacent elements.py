@@ -32,3 +32,24 @@ Output: 1 646 73
 
 SOLUTION:
 '''
+
+n = int(input())
+l = list(map(str,input().split()))
+f=0
+
+for i in range(0,n):
+    if i==0:
+        if len(l[i+1])==2 or len(l[i+1])==3:
+            print(l[i], end=" ")
+            f=1
+    elif i==n-1:
+        if len(l[i-1])==2 or len(l[i-1])==3:
+            print(l[i], end=" ") 
+            f=1
+    else:
+        if (len(l[i-1])==3 or len(l[i-1])==2) and (len(l[i+1])==2 or len(l[i+1])==3):
+            print(l[i],end=" ") 
+            f=1 
+		
+if f==0:
+    print("-1")
