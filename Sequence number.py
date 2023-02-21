@@ -8,7 +8,17 @@ Boundary Condition(s): 1 <= Length of S <= 12
 
 Input Format:  The first line contains the string S. 
 
-Output Format: The first line contains the sequence number for the string S. Example Input/Output 1: Input: ac Output: 29 Example Input/Output 2: Input: all Output: 1000
+Output Format: The first line contains the sequence number for the string S.
+
+Example Input/Output 1: 
+
+Input:  ac
+Output: 29 
+
+Example Input/Output 2: 
+
+Input:  all 
+Output: 1000
 
 SOLUTION:
 '''
