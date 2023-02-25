@@ -22,3 +22,11 @@ Explanation: Here X=2 and N=10. So the 10 multiples of 2 starting from 12 must b
 
 SOLUTION:
 '''
+
+x, n = map(int, input().split())
+l=list(map(int, input().split()))
+
+for i in range(l[0], l[0]*n, x):
+    if i not in l:
+        print(i)
+        break
