@@ -41,3 +41,16 @@ Input:  4 4
 
 Output: 3 3
 '''
+
+a,b=map(int,input().split())
+l=[list(map(str,input().split())) for i in range(a)]
+p=[];k=[]
+
+for i in range(a):
+    for j in range(b):
+        if l[i][j]=='B':
+            if i not in p:
+                p.append(i)
+            if j not in k:    
+                k.append(j)
+print(p[len(p)//2]+1, k[len(k)//2]+1)
