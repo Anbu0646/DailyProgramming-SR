@@ -33,24 +33,26 @@ SOLUTION:
  
 using namespace std;
 
-#include <bits/stdc++.h>
- 
-using namespace std;
-
 int main(int argc, char** argv)
 {
-    int k;
     string s;
-    cin >> s >> k;
-    int note = k, len = s.size();
-    while(note != len)
+    cin >> s;
+    for(int i = 0, toggle = 0; i < s.size(); i += 5)
     {
-        cout << s[note - 1];
-        note += k;
-        if(note > len)
+        string tmp = s.substr(i, 5);
+        for(char c : tmp)
         {
-            note = note % len;
+            if((toggle == 0 && isalpha(c)) || (toggle == 1 && isdigit(c)))
+            {
+                continue;
+            }
+            else
+            {
+                cout << "NO";
+                return 0;
+            }
         }
+        toggle = (toggle == 0) ? 1 : 0;
     }
-    cout << s[note - 1];
+    cout << "YES";
 }
