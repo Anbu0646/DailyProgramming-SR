@@ -43,3 +43,11 @@ Output:   41 46 42 44 28 40 27 268
 
 SOLUTION:
 '''
+
+m, n = map(int, input().split())
+mat=[list(map(int, input().split())) for i in range(m)]
+
+for i in range(m):
+    for j in range(n):
+        print(mat[i][j], end=" ")
+    print(sum(mat[i]))
