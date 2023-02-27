@@ -4,7 +4,7 @@ The program must accept a string S and an integer K as the input. The program mu
 Note: The multiple of K will eventually point to the last character of S. Hence infinite loop will not occur. 
 
 Boundary Condition(s): 1 <= Length of S <= 100
-1 <= K <= 100 
+                       1 <= K <= 100 
 
 Input Format: The first line contains the string S and K separated by a space.
 Output Format: The first line contains the characters at multiples of K. 
@@ -20,7 +20,6 @@ Example Input/Output 2:
 
 Input: abbrevation 5 
 Output: eoribtbaavn
-
 
 SOLUTION:
 */
