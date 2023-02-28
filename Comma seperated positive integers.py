@@ -25,7 +25,20 @@ Output: -1
 SOLUTION:
 '''
 
+ned=int(input())
+flash=list(map(int, input().split(",")))
+wonder_whamen=[i for i in flash if i>0]
+if (sum(wonder_whamen)==0):
+    print(-1)
+else: 
+    print(*wonder_whamen, sep=',')
+
+'''
+
+
 n=int(input())
 l=list(map(int, input().split(",")))
 p=[str(i) for i in l if i>0]
 print(-1 if len(p)==0 else ','.join(p))
+
+'''
