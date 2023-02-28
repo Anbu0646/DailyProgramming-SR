@@ -24,3 +24,8 @@ Output: -1
 
 SOLUTION:
 '''
+
+n=int(input())
+l=list(map(int, input().split(",")))
+p=[str(i) for i in l if i>0]
+print(-1 if len(p)==0 else ','.join(p))
