@@ -62,3 +62,32 @@ for i in range(a):
     print( ("-"*(a-1) ) + b)
 
 print(*l, sep="\n")
+
+
+'''
+
+Aliter:
+
+n,ch=map(str,input().split())
+n = int(n)
+top=[]
+for i in range(n):
+    s=""
+    for j in range(n+i):
+        if j==n-1:
+            s+=ch
+        elif j==n+i-1:
+            s+=ch
+        elif j==n-i-1:
+            s+=ch
+        else:
+            s+="-"
+    top.append(s)
+for i in top:
+    print(i)
+for i in range(n):
+    print((n-1)*"-",ch,sep="")
+for i in top[::-1]:
+    print(i)
+
+'''
