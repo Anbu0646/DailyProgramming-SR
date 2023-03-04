@@ -50,3 +50,48 @@ Output: 81 51 19
         
 SOLUTION:        
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void replaceBorderElementsByWaterImage(int R, int C, int matrix[][C])
+{
+    for(int i=0; i<R/2; i++)
+    {
+        for(int j=0; j<C; j++)
+        {
+            if(i==0 || j==0 || j==C-1)
+            {
+                int tem=matrix[i][j];
+                matrix[i][j]=matrix[R-i-1][j];
+                matrix[R-i-1][j]=tem;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int R, C;
+    scanf("%d %d", &R, &C);
+    int matrix[R][C];
+    for(int row = 0; row < R; row++)
+    {
+        for(int col = 0; col < C; col++)
+        {
+            scanf("%d", &matrix[row][col]);
+        }
+    }
+
+    replaceBorderElementsByWaterImage(R, C, matrix);
+
+    for(int row = 0; row < R; row++)
+    {
+        for(int col = 0; col < C; col++)
+        {
+            printf("%d ", matrix[row][col]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
