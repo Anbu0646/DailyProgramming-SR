@@ -4,7 +4,7 @@ For each integer among the N integers, the program must print the value which is
 output. (The first and last integers have only one integer adjacent to them. So consider only the single adjacent integer for them). 
 
 Boundary Condition(s):  2 <= N <= 100
-				                1 <= Each integer value <= 10^7                                                                                                                                                                                                
+			1 <= Each integer value <= 10^7                                                                                                                                                                                                
 
 Input Format:  The first line contains the values of N. The second line contains N integers separated by space(s).
 Output Format: The first line contains N integers separated by a space. 
