@@ -23,3 +23,17 @@ Output: acecriomchucaleti
 
 SOLUTION:
 '''
+
+word = input().strip()
+vowels = "aeiou"
+updated_word = ''
+vowel_update_count = 0
+
+for i in range(len(word)):
+    if word[i] in vowels:
+        updated_word += vowels[vowel_update_count]
+        vowel_update_count = (vowel_update_count + 1) % 5
+    else:
+        updated_word += word[i]
+        
+print(updated_word)
