@@ -28,3 +28,26 @@ Output: 1 * * 4 3 2 1
 
 SOLUTION:
 '''
+
+n = int(input()) 
+matrix = [['*' for i in range(n)] for j in range(n)]
+l = n//2 + 1
+k, c = l, 0
+for i in range(n): 
+    if k == n:
+        c = 1
+    matrix[l-1][i] = k 
+    matrix[i][l-1] = k
+    if c == 1:
+        k -= 1
+    else:
+        k += 1 
+for i in range(l-1):
+    matrix[i][0] = i + 1 
+    matrix[0][-i-1] = i + 1 
+    matrix[n-1][i] = i + 1 
+    matrix[-i-1][n-1] = i + 1
+for i in range(n): 
+    for j in range(n):
+        print(matrix[i][j], end = ' ')
+    print()
