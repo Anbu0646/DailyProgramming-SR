@@ -37,3 +37,21 @@ for i in range(len(word)):
         updated_word += word[i]
         
 print(updated_word)
+
+
+'''
+Aliter:
+
+word=input()
+vowels=["a","e","i","o","u"]
+count=0
+for i in word:
+    if i in vowels:
+        print(vowels[count], end="")
+        count+=1
+        if count==5:
+            k=0
+    else:
+        print(i, end="")
+        
+ '''
