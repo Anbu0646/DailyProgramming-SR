@@ -26,7 +26,7 @@ Input:  7
         9 10 6 2 5 1 4 
 Output: 1 -4 -4 3 -4 3 -3
 
-
+SOLUTION:
 '''
 
 n = int(input())
