@@ -28,3 +28,12 @@ Output: 59 750 9066 275447
 
 SOLUTION:
 '''
+N=int(input())
+List=list(map(int, input().split()))
+List.sort()
+
+for i in range(N - 1):
+    if len(str(List[i + 1]))>len(str(List[i])):
+        print(List[i], end=" ")
+        
+print(List[-1])
