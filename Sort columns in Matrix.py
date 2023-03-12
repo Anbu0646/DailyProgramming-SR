@@ -38,3 +38,15 @@ Output: 83 61 12 61 37
 
 SOLUTION:
 '''
+
+R, C = map(int, input().split())
+Matrix = [list(map(int,input().split())) for i in range(R)]
+Matrix_Sorted = []
+
+for i in zip(*Matrix):
+    List.append(list(i))
+
+Matrix_Sorted = sorted(Matrix_Sorted, key=lambda x : max(x), reverse=True)
+
+for i in zip(*Matrix_Sorted):
+    print(*i)
