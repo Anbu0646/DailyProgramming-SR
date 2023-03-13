@@ -24,3 +24,20 @@ Output: .s,s.qw,sd.fe2,3r
 
 SOLUTION:
 '''
+
+String = input().strip()
+String_of_Spec_Charac = True
+String_Replaced = ""
+
+for i in String:
+    if not i.isalnum():    
+        if String_of_Spec_Charac:
+            String_Replaced += "."
+        else:
+            String_Replaced += ","
+            
+        String_of_Spec_Charac = not String_of_Spec_Charac
+    else:
+        String_Replaced += i
+    
+print(String_Replaced)
