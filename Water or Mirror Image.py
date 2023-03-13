@@ -85,7 +85,7 @@ n = int(input())
 a = [list(map(int,input().split())) for row in range(n)]
 b = [list(map(int,input().split())) for row in range(n)]
 c = 0 
-for row in range(0,n):
+for row in range(0, n):
     if a[row] == b[row][::-1]:
         c += 1 
 if c == n or a[::-1] == b: print("YES")
