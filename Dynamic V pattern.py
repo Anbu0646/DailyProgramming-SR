@@ -45,3 +45,19 @@ Output: *
 
 SOLUTION:
 '''
+
+x, c, y = input().split()
+x = int(x)
+y = int(y)
+m = []
+
+for i in range(1, y + 1):
+    if(y-x>=i or i==y):
+        m.append('-' * (y+x-1-i)+c)
+    else:
+        m.append('-' * (i-(y-x)-1)+c + '-' * (2*(y-i)-1)+c)
+        
+for i in range(0, x-y):
+    print('-' * (i)+c)
+
+print(*m, sep='\n')
