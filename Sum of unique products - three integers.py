@@ -22,3 +22,7 @@ Output: 75
 
 SOLUTION:
 '''
+
+X, Y, Z = map(int, input().split())
+combinations = [X*Y, X*Z, Y*Z]
+print(sum(set(combinations)))
