@@ -24,3 +24,15 @@ Output: no
 
 SOLUTION:
 '''
+
+N = input().strip()
+first, second = list(N[:len(N)//2]), list(N[len(N)//2:])
+print("yes" if sorted(first) == sorted(second) else "no")
+
+'''
+Aliter:
+
+from collections import Counter
+s = input()
+print("yes" if Counter(s[:len(s)//2])==Counter(s[len(s)//2:]) else "no")
+'''
