@@ -28,3 +28,17 @@ Output: 249 103 311 577 21
 
 SOLUTION:
 '''
+
+x = int(input())
+
+arr = list(map(int,input().split()))
+
+for i in arr:
+    if(i%2 == 0):
+        print(i+1, end=" ")
+        
+    else:
+        if((i//10)%10 == 9):
+            print(i-90, end=" ")
+        else:
+            print(i + 10, end=" ")
