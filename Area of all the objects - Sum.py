@@ -41,6 +41,22 @@ N = int(input())
 Sum = 0
 
 for i in range(N):
+    Boundaries = input().split()
+    if len(Boundaries) == 2:
+        Sum += int(Boundaries[1])**2
+    else:
+        Sum += int(Boundaries[1]) * int(Boundaries[2])
+
+print(Sum)
+
+
+'''
+Aliter:
+
+N = int(input())
+Sum = 0
+
+for i in range(N):
     shape, *boundaries = input().split()
     
     if shape == 'square':
@@ -53,3 +69,4 @@ for i in range(N):
     Sum += area_1
 
 print(Sum)
+'''
