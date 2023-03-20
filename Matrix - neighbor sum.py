@@ -44,3 +44,13 @@ Output:   16 13 22 38 45
 SOLUTION:
 '''
 
+N=int(input())
+mat=[list(map(int, input().split())) for row in range(N)]
+
+for row in range(N):
+    for col in range(N):
+        if row==0 or row==N-1 or col==0 or col==N-1:
+            print(mat[row][col], end=' ')
+        else:
+            print(mat[row-1][col] + mat[row+1][col] + mat[row][col-1] + mat[row][col+1], end=' ')
+    print()
