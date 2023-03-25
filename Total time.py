@@ -38,8 +38,8 @@ N = int(input())
 Hours_sum = 0
 Minutes_sum = 0
 
-for i in range(N):
-    Hours, Minutes = map(int, input().split(":"))
+for i in input().split():
+    Hours, Minutes = i.split(":")
     Hours_sum += int(Hours)
     Minutes_sum += int(Minutes)
 
