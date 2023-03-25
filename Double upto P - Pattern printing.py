@@ -29,3 +29,12 @@ Output: 1 1
 
 SOLUTION:
 '''
+
+N, P = map(int, input().split())
+
+for i in range(1, N+1):
+    k = i
+    if(k<=P): k=i*2
+    for j in range(1, k+1):
+        print(i, end=" ")
+    print()
