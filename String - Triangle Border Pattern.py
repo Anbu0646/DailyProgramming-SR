@@ -12,16 +12,16 @@ Example Input/Output 1:
 
 Input:  abcdef
 Output: --a 
--f-b
-e-d-c 
+        -f-b
+        e-d-c 
 
 Example Input/Output 2: 
 
 Input:  skillrack 
 Output: ---s 
---k-k 
--c---i 
-a-r-l-l
+        --k-k 
+        -c---i 
+        a-r-l-l
 
 SOLUTION:
 '''
