@@ -19,3 +19,24 @@ Output: 3 1021
 
 SOLUTION:
 '''
+
+def prime(N):
+    if N==2:
+        return True
+    if N%2==0 or N==1:
+        return False
+    for i in range(3, (int(N**(0.5))) + 1, 2):
+        if N%i==0:
+            return False
+    return True
+
+N=int(input())
+Flag = False
+
+for i in range(2, N+1):
+    if prime(i) and prime(N-i):
+        print(i, N-i)
+        Flag = True
+        break
+
+if not Flag:   print(-1)
