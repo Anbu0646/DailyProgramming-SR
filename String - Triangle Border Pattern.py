@@ -26,3 +26,19 @@ Output: ---s
 SOLUTION:
 '''
 
+r  = list(input().strip())
+h  = len(r)//3
+n  = len(r)
+h2 = 1
+
+while h!=0:
+    if h == n//3:
+        print('-'*h+r[0])
+        r = r[1:]
+    else:
+        print('-'*h+r[-1]+'-'*h2+r[0])
+        r = r[1:-1]
+        h2 += 2
+    h -= 1
+
+print('-'.join(r[::-1]))
