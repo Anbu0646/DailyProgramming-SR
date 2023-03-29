@@ -52,3 +52,31 @@ Output:
 
 SOLUTION:
 '''
+
+x=int(input())
+a=[]
+
+for i in range(x-1): 
+    t='|'*(x-1-i) 
+    if i==0: 
+        t=t+('* '*x) 
+    else: 
+        c=('-'*(((i-1)*2)-1)) 
+        k='* '+c
+        if len(c)>0: 
+            k=k+' '
+        k=k+'* ' 
+        l=(x-i-3) 
+        c=('-'*((l*2)+1)) 
+        if len(c)>0: 
+            c=c+' '
+        t=t+k+c+k
+    a.append(t)
+
+for i in a: 
+    print(i) 
+
+print('* '*((x*2)-1)) 
+
+for i in a[::-1]: 
+    print(i)
