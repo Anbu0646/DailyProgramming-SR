@@ -31,3 +31,12 @@ Output: 12 12 34123 34123 34123
 
 SOLUTION:
 '''
+
+n = int(input())
+a = list(map(str,input().split()))
+b = max([len(i) for i in a])
+
+for i in range(0, b):
+    c = [int(j[i]) for j in a if i < len(j)]
+    d = [int(j) for j in a if i < len(j) and int(j[i])==min(c)]
+    print(min(d), end=' ')
