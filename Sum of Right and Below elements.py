@@ -49,3 +49,19 @@ Output: 31 42 53 14
 
 SOLUTION:
 '''
+
+R, C = map(int, input().split())
+Mat = [list(map(int, input().split())) for i in range(R)]
+
+for i in range(R):
+    for j in range(C):
+        Sum = 0
+        if j < C - 1:
+            Sum += Mat[i][j + 1]
+        if i < R - 1:
+            Sum += Mat[i + 1][j]
+        if i == R - 1 and j == C - 1:
+            Sum += Mat[i][j]
+        
+        print(Sum, end=" ")
+    print()
