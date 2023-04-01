@@ -102,3 +102,43 @@ int main()
     }
 
 }
+
+
+/*
+
+Aliter:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,v=0;
+    scanf("%d\n",&n);
+    char s[1000][16];
+    for(int i=0;i<n;i++){
+        scanf("%s ",s[i]);
+        v = strlen(s[i])> v  &&strlen(s[i])<16? strlen(s[i]):v;
+    }
+    
+    for(int i=0;i<v;i++){
+        long p=9999999;
+        char c='9';
+        for(int j=0;j<n;j++){
+            if(i<strlen(s[j])){
+                if(s[j][i]<c){
+                    c=s[j][i];
+                    p = atol(s[j]);
+                }
+                else if(s[j][i]==c){
+                    p=atol(s[j])<=p ? atol(s[j]):p;
+                    
+                }
+            }
+        }
+        printf("%ld ",p);
+    }
+
+}
+
+*/
