@@ -23,3 +23,24 @@ Output: 1 * 2 * 3 * 4
 
 SOLUTION:
 '''
+
+N = int(input())
+Ctr = 1
+
+for i in range(1, N + 1):
+    for j in range(1, i):
+        print("- ", end="")
+    
+    temp = Ctr
+    
+    for j in range(1, N - i + 2):
+        if i%2 == 0:
+            print(temp + N - i + 1 - j, end="")
+        else:
+            print(Ctr, end="")
+        
+        Ctr += 1
+        
+        if j != N - i + 1:
+            print(" * ", end="")
+    print()
