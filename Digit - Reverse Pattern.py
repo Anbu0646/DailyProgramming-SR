@@ -26,3 +26,10 @@ Output: 555555555
 
 SOLUTION:
 '''
+
+N=input().strip()
+for index in range(len(N)):
+    if N[len(N)-index-1] == '0':
+        print("-")
+        continue
+    print(N[index] * int(N[len(N) - index - 1]))
