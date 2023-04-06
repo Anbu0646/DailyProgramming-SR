@@ -47,7 +47,7 @@ int main(int argc, char** argv)
             if(i % 2 == 1) 
                 cout << count; 
             else
-                cout << tmp + n - i + 1 - j;
+                cout << t + n - i + 1 - j;
 
             count++;
 
