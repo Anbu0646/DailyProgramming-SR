@@ -22,3 +22,10 @@ Output: 57468
 
 SOLUTION:
 '''
+
+N = input().strip()
+N1 = ""
+for i in range(0, len(N), 2):
+    N1 += N[i+1]+N[i]
+    #print(int(N[i:i+2][::-1]), end="")
+print(int(N1))
