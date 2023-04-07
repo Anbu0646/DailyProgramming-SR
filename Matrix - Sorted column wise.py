@@ -35,3 +35,10 @@ Output: -2 -22 -7 -45 -45 27 31 -44
 
 SOLUTION:
 '''
+
+R, C = map(int,input().split())
+matrix = [list(map(int,input().split())) for row in range(R)]
+matrix = [sorted(row) for row in zip(*matrix)]
+
+for row in zip(*matrix):
+    print(*row)
