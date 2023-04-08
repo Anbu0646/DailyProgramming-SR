@@ -41,6 +41,33 @@ Output: -1
 SOLUTION:
 '''
 
+r, c = map(int,input().split())
+mat = [list(map(int,input().split())) for i in range(r)]
+cols = []
+
+for i in range(c):
+    odd,even = 0,0
+    for j in range(r):
+        if mat[j][i]%2:
+            odd += 1 
+        else:
+            even += 1 
+    if not odd or not even:
+        cols.append(i)
+        
+if cols:
+    for i in range(r):
+        for j in range(c):
+            if j in cols:
+                print(mat[i][j],end=" ")
+        print()
+else:
+    print(-1)
+    
+    
+'''
+
+Aliter:
 R, C = map(int, input().split())
 Mat = [list(map(int, input().split())) for i in range(R)]
 
@@ -63,8 +90,10 @@ for col in range(C):
 if len(Mat_col) > 0:
     for i in range(R):
         for j in range(C):
-            print(Mat_col[i][j], end=" ")
+          if j in Mat_col:
+            print(Mat[i][j], end=" ")
         print()
         
 else:
     print(-1)
+'''
