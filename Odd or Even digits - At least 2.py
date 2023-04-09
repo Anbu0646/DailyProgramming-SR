@@ -22,3 +22,20 @@ Output: -1
 
 SOLUTION:
 '''
+
+X, Y = map(int,input().split())
+flag = False
+
+for num in range(X, Y+1):
+    odd, even = 0, 0
+    for digit in str(num):
+        if int(digit) % 2:
+            odd += 1
+        else:
+            even += 1
+    if odd>1 and even>1:
+        print(num, end=" ")
+        flag = True
+        
+if not flag:
+    print(-1)
