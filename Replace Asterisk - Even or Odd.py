@@ -60,8 +60,8 @@ r, c = map(int,input().split())
 l = [list(map(int,input().split())) for i in range(r)]
 od, ev = 0, 0
 
-row=[0 for i in range(r)]
-col=[0 for i in range(c)]
+row = [0 for i in range(r)]
+col = [0 for i in range(c)]
 
 for i in range(r):
     for j in range(c):
@@ -70,7 +70,7 @@ for i in range(r):
         else:
             od += 1
          
-val=0
+val = 0
 
 if(od > ev):
     val = 1
