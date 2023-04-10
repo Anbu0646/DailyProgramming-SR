@@ -55,3 +55,43 @@ Output: -1
 
 SOLUTION:
 '''
+
+r, c = map(int,input().split())
+l = [list(map(int,input().split())) for i in range(r)]
+od, ev = 0, 0
+
+row=[0 for i in range(r)]
+col=[0 for i in range(c)]
+
+for i in range(r):
+    for j in range(c):
+        if(l[i][j]%2 == 0):
+            ev += 1
+        else:
+            od += 1
+         
+val=0
+
+if(od > ev):
+    val = 1
+for i in range(r):
+    for j in range(c):
+        if(l[i][j]%2 == val):
+            l[i][j] = "*"
+            row[i] += 1
+            col[j] += 1
+        
+fl = 0
+
+for i in range(r):
+    if row[i] == c:
+        continue
+    for j in range(c):
+        if col[j] == r:
+            continue
+        fl = 1
+        print(l[i][j], end=" ")
+    print("")
+    
+if fl == 0:
+    print("-1")
