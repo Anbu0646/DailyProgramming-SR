@@ -34,3 +34,14 @@ if flag:
     print("valid")
 else:
     print("invalid")
+    
+ '''
+ Aliter:
+ 
+s=input().strip()
+for i in s:
+    if i*3 in s:
+        print("invalid")
+        exit(0)
+print("valid")
+ '''
