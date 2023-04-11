@@ -22,3 +22,13 @@ Explanation: There are only three alphabets available from x (including x). Henc
 
 SOLUTION:
 '''
+
+Str, K = map(str, input().split()); K = int(K)
+alpha = []
+
+for i in range(ord(Str), ord(Str) + K):
+    if i <= 122:
+        alpha.append(chr(i))
+
+for i in range(len(alpha) - 1, -1, -1):
+    print(alpha[i], end="")
