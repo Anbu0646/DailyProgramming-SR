@@ -36,3 +36,46 @@ Output: 4
 SOLUTION:
 '''
 
+r, c = map(int,input().split())
+l = [input().strip() for _ in range(r)]
+maxi = 0
+
+for i in l:
+    for j in range(1, c + 1):
+        if '*'*j in i:
+            maxi = max(maxi, j)
+        
+for i in zip(*l):
+    for j in range(1, c + 1):
+        if '*'*j in ''.join(i):
+            maxi = max(maxi,j)
+print(maxi)
+
+'''
+
+Aliter:
+
+r, c = map(int,input().split())
+l = [input() for i in range(r)]
+c = 0
+
+for i in l:
+    x = 1
+    for j in range(len(i) - 1):
+        if i[j]=='*' and i[j+1]=='*':
+            x += 1
+    if x > c:
+        c = x
+        
+l = list(zip(*l))
+for i in l:
+    x = 1
+    for j in range(len(i) - 1):
+        if i[j]=='*' and i[j+1]=='*':
+            x += 1
+    if x > c:
+        c = x
+        
+print(c)
+
+'''
