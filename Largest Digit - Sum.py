@@ -49,3 +49,15 @@ for i in Arr:
     Largest_Digit += Largest_digit(i)
 
 print(Largest_Digit)
+
+
+'''
+
+Aliter:
+
+N = int(input())
+arr = list(map(int, input().split()))
+S = sum([int(max(str(num))) for num in arr])
+print(S)
+
+'''
