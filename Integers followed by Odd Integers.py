@@ -33,3 +33,17 @@ Output: 5 * *
 
 SOLUTION:
 '''
+
+R, C = map(int, input().split())
+matrix = [list(map(int, input().split())) for row in range(R)]
+
+for row in range(R):
+    for col in range(C):
+        if col == C-1:
+            print("*", end = " ")
+        else:
+            if matrix[row][col + 1]%2:
+                print(matrix[row][col], end = " ")
+            else:
+                print("*", end = " ")
+    print()
