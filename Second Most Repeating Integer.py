@@ -29,3 +29,16 @@ Output: 47
 
 SOLUTION:
 '''
+
+N = int(input())
+arr = list(map(int,input().split()))
+count = sorted(set([arr.count(num) for num in arr if arr.count(num)>1]))
+
+if len(count)<=1:
+    print(-1)
+else:
+    maxCount = count[-2]
+    for num in arr:
+        if arr.count(num) == maxCount:
+            print(num)
+            break
