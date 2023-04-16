@@ -38,3 +38,42 @@ Output: SULPHATE
 
 SOLUTION:
 '''
+
+def count_consonants(string):
+    vowels = 'aeiouAEIOU'
+    consonants = 0
+    for char in string:
+        if char.isalpha() and char not in vowels:
+            consonants += 1
+    return consonants
+
+n = int(input())
+max_consonants = 0
+max_consonant_string = ""
+
+for i in range(n):
+    string = input().strip()
+    consonants = count_consonants(string)
+    if consonants > max_consonants:
+        max_consonants = consonants
+        max_consonant_string = string
+
+print(max_consonant_string)
+
+'''
+Aliter:
+
+N = int(input())
+
+max_consonants = 0
+res = ""
+
+for i in range(N):
+    Str = input().strip()
+    consonants = sum(1 for i in Str if i.isalpha() and i.lower() not in "aeiou")
+    if consonants > max_consonants:
+        max_consonants = consonants
+        res = Str
+
+print(res)
+'''
