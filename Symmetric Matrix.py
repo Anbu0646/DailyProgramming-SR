@@ -43,3 +43,14 @@ Output: NO
 
 SOLUTION:
 '''
+
+N = int(input())
+Mat = [list(map(int, input().split())) for i in range(N)]
+Sym = 1
+
+for i in range(N):
+    for j in range(N):
+        if Mat[i][j] != Mat[j][i]:
+            Sym = 0
+
+print("YES" if Sym == 1 else "NO")
