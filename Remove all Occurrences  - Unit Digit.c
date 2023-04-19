@@ -26,3 +26,28 @@ Output: -1
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    unsigned long long int Num;
+    scanf("%lld", &Num);
+    long long int UnitDigit = Num % 10, Result = 0, Multiply = 1;
+    
+    while(Num != 0)
+    {
+        int CurrentDig = Num % 10;
+        if(CurrentDig != UnitDigit)
+        {
+            Result += CurrentDig * Multiply;
+            Multiply *= 10;
+        }
+    Num /= 10;
+    }
+    
+    printf("%lld", (Result == 0)?-1:Result);
+    
+    return 0;
+}
