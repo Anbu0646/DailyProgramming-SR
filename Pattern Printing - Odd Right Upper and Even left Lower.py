@@ -29,3 +29,22 @@ Output:  0 1 3 7 13 21 31
 
 SOLUTION:
 '''
+
+n = int(input())
+m = [list (0 for col in range(n)) for row in range(n)]
+
+odd, even = 1, 2
+
+for col in range(n):
+    for row in range(n):
+        if(row == col):
+            continue
+        elif(row < col):
+            m[row][col] = odd
+            odd += 2
+        else:
+            m[row][col] = even
+            even += 2
+                
+for row in m:
+    print(*row)
