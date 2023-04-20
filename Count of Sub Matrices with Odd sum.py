@@ -37,10 +37,10 @@ SOLUTION:
 R, C = map(int, input().split())
 Mat = [list(map(int, input().split())) for i in range (R)]
 
-row = len(Mat); col = len(Mat[0]); count = 0
+count = 0
 
-for i in range(row - 1):
-    for j in range(col - 1):
+for i in range(R - 1):
+    for j in range(C - 1):
         submat =  Mat[i][j] + Mat[i][j + 1] + Mat[i + 1][j] + Mat[i + 1][j + 1]
         
         if submat % 2 != 0:
