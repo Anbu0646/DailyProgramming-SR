@@ -33,3 +33,17 @@ Output: 6
 
 SOLUTION:
 '''
+
+R, C = map(int, input().split())
+Mat = [list(map(int, input().split())) for i in range (R)]
+
+row = len(Mat); col = len(Mat[0]); count = 0
+
+for i in range(row - 1):
+    for j in range(col - 1):
+        submat =  Mat[i][j] + Mat[i][j + 1] + Mat[i + 1][j] + Mat[i + 1][j + 1]
+        
+        if submat % 2 != 0:
+            count += 1
+
+print(count)
