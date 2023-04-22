@@ -55,3 +55,29 @@ Explanation: The sales person was present in the following time slots.
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int h[n], m[n], e, x, t=0;
+    char s[n];
+        
+    for(int i=0;i<n;i++)
+      scanf("%s %d:%d\n", &s[i], &h[i], &m[i]);
+    
+    for(int i=0;i<n;i=i+2)
+    {
+      e = 0, x = 0;
+      e = (h[i]*60) + m[i];
+      x = (h[i+1]*60) + m[i+1];
+      t += (x - e);
+    }
+        
+    if((t/60) >= 8)
+      printf("yes");
+    else
+      printf("no");
+}
