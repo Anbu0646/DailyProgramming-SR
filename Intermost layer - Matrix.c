@@ -45,3 +45,42 @@ Output: m e q u f
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r, c;
+    scanf("%d %d ", &r, &c);
+    char mat[r][c];
+        
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            scanf("%c ", &mat[i][j]);
+           
+        }
+    }
+        
+    int u = 0, d = r - 1, l = 0, ri = c - 1;
+        
+    while(u+1 <= d - 1 && l + 1 <= ri - 1)
+    {
+        u++;
+        d--;
+        l++;
+        ri--;
+    }
+        
+    for(int i=u; i<=d; i++)
+    {
+        for(int j=l; j<=ri; j++)
+        {
+            printf("%c ", mat[i][j]);
+        }
+            
+    printf("\n");
+    }
+}
