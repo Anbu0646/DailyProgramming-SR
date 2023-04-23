@@ -23,3 +23,36 @@ Output: 1 1 2 11 5 121 10 25 50
 
 SOLUTION:
 */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    long int x, y;
+    scanf("%ld %ld", &x, &y);
+  
+    int a[1001], b[1001], c1=0, c2=0;
+  
+    for(int i=1; i<=x; i++)
+    {
+        if(x%i == 0)
+          a[c1++] = i;
+    }
+  
+    for(int i=1; i<=y; i++)
+    {
+        if(y%i==0)
+          b[c2++] = i;
+    }
+  
+    int l=0, m=0; 
+  
+    while(l<c1 || m<c2)
+    {
+        if(l < c1)
+          printf("%d ", a[l++]);
+        if(m < c2)
+          printf("%d ", b[m++]);
+    }
+}
