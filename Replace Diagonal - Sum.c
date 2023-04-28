@@ -54,3 +54,47 @@ Explanation: The elements in the main diagonal are 17 43 44 and 41.
 
 SOLUTION:
 */
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int rrr[n][n], sum = 0;
+    
+    for(int i=0; i<n; i++)
+    {
+       for(int j=0; j<n; j++)
+       {
+               cin >> rrr[i][j];
+       }
+    }
+        
+    for(int i = 0; i < n; i++)
+    {
+        sum = sum + rrr[i][i];
+        sum = sum + rrr[i][n - i - 1];
+    }
+    
+    if(n % 2 == 1)
+        sum -= rrr[n/2][n/2];
+
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+             if(j == i || j == n - 1 - i)
+             {
+                   cout << sum << " ";
+             }
+             else
+             {
+                   cout << rrr[i][j]<< " ";
+              }
+        }
+        cout << endl;
+     }
+}
+        
