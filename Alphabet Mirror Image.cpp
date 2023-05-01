@@ -25,3 +25,20 @@ Output: a b c d * d c b a
 
 SOLUTION:
 */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin >> n;
+        
+    for(int i = 1, od = 1; i <= n; i++, od+=2)
+    {
+        for(int j = 1; j <= n - i + 1; j++) cout << (char)(96+j)<< " ";
+        for(int j = 1; j <= od ; j++) cout << "* ";
+        for(int j = i; j <= n ; j++) cout << (char)(97+n-j)<< " ";
+        cout << endl;
+    }
+}
