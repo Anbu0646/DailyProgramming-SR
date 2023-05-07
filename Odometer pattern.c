@@ -45,7 +45,36 @@ Output:
 31001 
 31002
 
-
-
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char qw[100];
+    scanf("%s", qw);
+    
+    int l = strlen(qw);
+    int val[l];
+  
+    for(int i=0; i<l; i++) 
+      val[i] = 0;
+  
+    for(int i=0; i<l; i++)
+    {
+        int t = qw[i] - '0';
+        
+        for(int j = (i==0) ? 0 : 1; j<=t; j++)
+        {
+            val[i] = j;
+          
+            for(int k=0;k<l;k++)
+            {
+                printf("%d",val[k]);
+            }
+        printf("\n");
+        }
+    }
+}
