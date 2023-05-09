@@ -79,3 +79,64 @@ Output:
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+  int jj;
+  scanf("%d", &jj);
+  int aj[jj];
+  int bj[jj];
+  
+  for(int i=0; i<jj; i++)
+  {
+    scanf("%d %d", &aj[i], &bj[i]);
+  }
+  
+  int cj[jj];
+  int mj = 0;
+  
+  for(int i=0; i<jj; i++)
+  {
+      if(i%2 == 0)
+      {
+          cj[i] = aj[i];
+      }
+      else
+      {
+          cj[i] = bj[i];
+      }
+  }
+  
+  for(int p=1; p<jj; p++)
+  {
+      for(int i=0; i<jj - 1; i++)
+      {
+          if(cj[i] > cj[i+1])
+          {
+            int tt = aj[i];
+            
+            aj[i] = aj[i+1];
+            aj[i + 1] = tt;
+            
+            int oo = bj[i];
+            
+            bj[i] = bj[i+1];
+            bj[i+1] = oo;
+            
+            int hh = cj[i];
+            
+            cj[i] = cj[i+1];
+            cj[i+1] = hh;
+        }
+    }
+}
+  
+for(int i=0; i<jj; i++)
+{
+    printf("%d %d\n", aj[i], bj[i]);
+}
+  
+}
