@@ -38,3 +38,8 @@ Output: -1
 
 SOLUTION:
 '''
+
+n = input().strip()
+x = input().strip()
+y = max(n.split(x), key = len)
+print(y if y != '' else -1)
