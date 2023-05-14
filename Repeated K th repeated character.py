@@ -39,3 +39,24 @@ Output: -1
 
 SOLUTION:
 '''
+
+a = input().strip()
+x = int(input().strip())
+r=[]; s=[]
+
+for i in a:
+    if i in r:
+        if i not in s:
+            s.append(i)
+    else:
+        r.append(i)
+        
+if x>len(s):
+    print(a)
+    exit()
+    
+a = a.replace(s[x-1],"")
+if a == "":
+    print(-1)
+else:
+    print(a)
