@@ -84,3 +84,29 @@ Output:
 
 SOLUTION:
 '''
+
+n = int(input())
+l = []
+l1, l2 = [], []
+
+for i in range(n):
+    m, x = map(str, input().split())
+    if(m == '+'):
+        l.append(int(x))
+    elif(m == '-'):
+        l.remove(int(x))
+    else:
+        if(m == '?' and x == '1'):
+            l1 = [i for i in l if i%2!=0]
+            if(len(l1) != 0):
+                print(*l1)
+            else:
+                print(-1)
+        else:
+            l2 = [i for i in l if i%2 == 0]
+            if(len(l2) != 0):
+                print(*l2)
+            else:
+                print(-1)
+          
+        k = 0
