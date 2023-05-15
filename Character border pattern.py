@@ -33,3 +33,21 @@ Output:
 
 SOLUTION:
 '''
+
+n, c = input().split()
+n = int(n)
+m, o, p = n, n, 1
+
+print(" ".join(c * (n + 4)))
+
+for i in range((n + 1)//2):
+    print('- ' * p + c, end=' ')
+    for j in range(m):
+        print(o, end=' ')
+        o -= 1
+        if o == 0:
+            o = n
+    m -= 2
+    p += 1
+    print(c)
+print('- ' * p + c)
