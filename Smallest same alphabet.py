@@ -31,3 +31,12 @@ Output: tonas nova noah tonas noah
 
 SOLUTION:
 '''
+
+S = input().split()
+
+for word in S:
+    k = word+'1'
+    for sub in S:
+        if sorted(set(word)) == sorted(set(sub)) and len(sub) < len(k) :
+            k = sub
+    print(k, end=' ')
