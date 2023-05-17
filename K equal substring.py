@@ -30,3 +30,13 @@ Output: no
 
 SOLUTION:
 '''
+
+a,b = map(str,input().split())
+b = int(b)
+
+for i in a:
+    if a.count(i)%b != 0:
+        print("no")
+        exit()
+        
+print("yes")
