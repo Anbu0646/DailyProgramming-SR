@@ -50,18 +50,11 @@ Output:
 SOLUTION:
 '''
 
-N = int(input())
-Arr = list(map(int, input().split()))
-
-SD = []; TD= []
-
-for i in Arr:
-    if len(str(i)) == 1:
-        SD.append(i)
-    elif len(str(i)) == 2:
-        TD.append(i)
-
-if len(SD) == 0: print(-1)
-else: print(" ".join(map(str, SD)))
-if len(TD) == 0: print(-1)
-else: print(" ".join(map(str, TD)))
+n = int(input())
+l = input().split()
+a = [i for i in l if len(i)==1]
+b = [i for i in l if len(i)==2]
+if a: print(*a)
+else: print(-1)
+if b: print(*b)
+else: print(-1)
