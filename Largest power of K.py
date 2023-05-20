@@ -47,3 +47,14 @@ Output:
 
 SOLUTION:
 '''
+
+n, k = map(int,input().split())
+l = sorted(list(map(int,input().split())), reverse = True)
+x = [k**i for i in range(1,99)]
+
+for i in l:
+    if i in x:
+        print(i)
+        exit()
+        
+print(-1)
