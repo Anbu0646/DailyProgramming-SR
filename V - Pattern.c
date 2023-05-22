@@ -36,3 +36,25 @@ program
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[100];
+    scanf("%s ", s);
+  
+    for(int i=0; i<=strlen(s)/2; i++)
+    {
+        for(int j=0; j<strlen(s); j++)
+        {
+            if(j>=i && j<=strlen(s) - i - 1) 
+               printf("%c", s[j]);
+            else 
+               printf("*");
+        }
+        printf("\n");
+    }
+
+}
