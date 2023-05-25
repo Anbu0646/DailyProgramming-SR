@@ -36,3 +36,17 @@ Output: 1823456776891011543211213141516171819
 
 SOLUTION:
 '''
+
+n = int(input())
+b = list(bin(n)[2:])
+ctr = 1
+for i in range(len(b)):
+    if b[i] == '1':
+        b[i] = str(ctr)
+        ctr += 1
+ctr = 1
+for i in range(len(b) - 1, -1, -1):
+    if b[i] == '0':
+        b[i] = str(ctr)
+        ctr += 1
+print(''.join(b))
