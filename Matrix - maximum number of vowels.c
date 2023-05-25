@@ -70,3 +70,60 @@ x  c  v  u
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+char a[100][100], b[100][100];
+int c=0, c1=0, i, j, k, n;
+scanf("%d", &n);
+  
+for(i=0; i<n; i++)
+{
+    for(j=0;j<n;j++)
+    {
+        scanf(" %c",&a[i][j]);
+        if(a[i][j]=='a'||a[i][j]=='e'||a[i][j]=='i'||a[i][j]=='o'||a[i][j]=='u'||a[i][j]=='A'||a[i][j]=='E'||a[i][j]=='I'||a[i][j]=='O'||a[i][j]=='U')
+        {
+            c++;
+        }
+    }
+}
+  
+for(i=0; i<n; i++)
+{
+    for(j=0; j<n; j++)
+    {
+        scanf(" %c", &b[i][j]);
+        if(b[i][j]=='a' || b[i][j]=='i' || b[i][j]=='e' || b[i][j]=='u' || b[i][j]=='o' || b[i][j]=='A' || b[i][j]=='E' || b[i][j]=='I' || b[i][j]=='O' || b[i][j]=='U')
+        {
+            c1++;
+        }
+    }
+}
+
+if(c>=c1)
+{
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            printf("%c ", a[i][j]);
+        }
+        printf("\n");
+    }
+}
+else
+{
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            printf("%c ", b[i][j]);
+        }
+        printf("\n");
+    }
+}
+}
