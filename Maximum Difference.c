@@ -43,7 +43,36 @@ Output: 12 46
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+
+int main()
+{
+  int n, l = 0;
+  scanf("%d", &n);
+  int a[n], v, v1;
+  
+  for(int i=0; i<n; i++)
+      scanf("%d", &a[i]);
+  v = INT_MAX;
+  v1 = INT_MIN;
+     
+  for(int j=0; j<n; j++)
+  {
+      if(a[j] < v)
+      {
+         v = a[j];
+      }
+      if(a[j] > v1)
+         v1 = a[j];
+  }
+  
+  printf("%d %d", v, v1);
+}
+/* PYHTON:
 N = int(input())
 Arr = list(map(int, input().split()))
 Arr.sort()
 print(Arr[0], Arr[-1], sep=" ")
+*/
