@@ -48,3 +48,45 @@ Output:
 
 SOLUTION:
 */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n, k;
+    cin >> n >> k;
+    int arr[n];
+  
+    for(int i=0; i<n; i++)
+    {
+        cin >> arr[i];
+    }
+  
+    int flag = 0;
+    int st = 0;
+    int ed = n-k;
+  
+    for(int i=0; i<n/k; i++)
+    {
+        if(flag == 0)
+        {
+           for(int j=st; j<st + k; j++)
+           {
+               cout << arr[j] << " ";
+           }
+           flag = 1;
+           st += k;
+        }
+        else
+        {
+            for(int j=ed; j<ed + k; j++)
+            {
+                cout << arr[j] << " ";
+            }
+            flag = 0;
+            ed -= k;
+        }
+    }
+
+}
