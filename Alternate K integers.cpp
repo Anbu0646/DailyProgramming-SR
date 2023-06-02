@@ -7,7 +7,8 @@ Note: The value of N is always is divisible by K.
 Boundary Condition(s): 
 
 1 <= N <= 1000 
-1 <= K <= N 1 <= Each integer value <= 10^8 
+1 <= K <= N 
+1 <= Each integer value <= 10^8 
 
 Input Format: 
 
