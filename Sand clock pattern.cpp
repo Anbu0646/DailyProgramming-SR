@@ -47,3 +47,63 @@ Output:
 
 SOLUTION:
 */
+
+#include <bits/stdc++.h> 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin >> n;
+    int st=n,flag=0,dsh=0;
+    for(int i=0; i<(n*2) + 1; i++)
+    {
+        for(int j=0; j<dsh; j++)
+        {
+            cout << "-";
+        }
+        if(i == n)
+        {
+            cout << "*";
+        }
+        for(int j=0; j<st*2; j++)
+        {
+            cout << st;
+            if(j != (st*2) - 1)
+            {
+                cout << "*";
+            }
+        }
+        if(i == n)
+        {
+            flag = 1;
+        }
+        if(flag == 0)
+        {
+            if(i == n - 1)
+            {
+                dsh++;
+            }
+            else{
+                dsh += 2;
+            }
+            st--;
+        }
+        else
+        {
+            if(i == n)
+            {
+                dsh--;
+            }
+            else
+            {
+                dsh -= 2;
+            }
+            st++;
+        }
+      
+        cout << endl;
+        
+    }
+
+}
