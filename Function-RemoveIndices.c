@@ -27,3 +27,32 @@ Hence 1 4 6 is printed.
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include <stdlib.h>
+
+void removeIndices(int arr[], int M, int indices[], int N)
+{
+    for(int i=0; i<N-1; i++)
+    {
+        for(int j=i + 1; j<N; j++)
+        {
+            if(indices[i] < indices[j])
+            {
+                int temp = indices[i];
+                indices[i] = indices[j];
+                indices[j] = temp;
+            }
+        }
+    }
+  
+    for(int i=0; i<N; i++)
+    {
+        int index = indices[i];
+        for(int j=index; j<M - 1; j++)
+        {
+            arr[j] = arr[j + 1];
+        }
+        M--;
+    }
+}
