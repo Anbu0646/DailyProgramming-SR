@@ -66,3 +66,13 @@ int main()
         printf("\n");
     }
 }
+
+/*
+
+PYTHON:
+
+n = int(input())
+for i in range(n):
+    print(*['-'] * (n-i-1), *range(n, n - i, -1), *range(n - i, n + 1))
+    
+*/
