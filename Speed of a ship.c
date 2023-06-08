@@ -53,6 +53,24 @@ Output: 13
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    float n, m, c = 0;
+    scanf("%f %f", &n, &m);
+    
+    while(n>m)
+    {
+        m = m + (m/4);
+        c++;
+    }
+    
+    printf("%d", (int)c);
+}
+
+/*
 input_n = input().split()
 
 if len(input_n) == 2:
@@ -67,3 +85,4 @@ while Speed < N:
     Speed += temp
     C += 1
 print(C)
+*/
