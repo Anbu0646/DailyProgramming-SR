@@ -58,3 +58,43 @@ Output:
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+   unsigned long int n, i, j, k;
+   scanf("%lu", &n);
+   unsigned long int arr[n][n], t, c = 0;
+   for(i=0; i<n; i++)
+   {
+      for(j=0; j<n; j++)
+      {
+          scanf("%lu", &arr[i][j]);
+          t = arr[i][j];
+          c = 0;
+       
+          while(t>0)
+          {
+             c++;
+             t /= 10;
+          }
+       
+          t = (arr[i][j])%10;
+      if(t == 0)
+         printf("%lu", arr[i][j]);
+      else if(arr[i][j] % t == 0)
+      {
+           for(k=0; k<c; k++)
+               printf("*");
+      }
+      else
+         printf("%lu", arr[i][j]);
+      printf(" ");
+      }
+     printf("\n");
+   }
+ return 0;
+
+}
