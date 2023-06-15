@@ -30,3 +30,31 @@ Output: -1
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+  char ch[100];
+  scanf("%s", ch);
+  int l = strlen(ch);
+  int m = -1;
+  
+  for(int i=0; i<l; i++)
+  {
+      for(int j=i; j<l; j++)
+      {
+          if(ch[i] == ch[j])
+          {
+              int n = j - 1 - i;
+              if(n > m)
+              {
+                  m = n;
+              }
+          }
+      }
+  }
+  
+  printf("%d", m);
+}
