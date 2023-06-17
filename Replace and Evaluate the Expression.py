@@ -1,4 +1,4 @@
-/*
+'''
 The program must accept a string value S representing an expression as the input. The expression will contain integers as well as plus and minus operators. The program must switch the operators plus and minus and then evaluate the expression and print the expression value as the output. 
 
 Boundary Condition(s): 1 <= Length of S <= 100 
@@ -26,7 +26,7 @@ Input:  100-20+40-1
 Output: 81
 
 SOLUTION:
-*/
+'''
 
 Equation = input().strip()
 Equation = Equation.replace('+', 'a')
