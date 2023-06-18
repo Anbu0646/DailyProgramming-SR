@@ -29,3 +29,54 @@ Output:  -1
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+isvowel(char a)
+{
+    if(a=='a'|| a=='e'|| a=='i'|| a=='o'|| a=='u')
+       return 1;
+    return 0;
+}
+
+isconso(char a)
+{
+    if(a!='a' && a!='e' && a!='i' && a!='o' && a!='u')
+       return 1;
+    return 0;
+}
+
+int main()
+{
+    char a[100];
+    scanf("%s", &a);
+    int l = strlen(a), c1 = 0, e = 0;
+    for(int i=0; i<l; i++)
+    {
+        if(isconso(a[i]))
+        {
+            int flag = 0;
+            for(int j = i + 1; j<l; j++)
+            {
+                if(isvowel(a[j]))
+                {
+                    a[i] = a[j];
+                    c1++;
+                    flag = 1;
+                    break;
+                }
+            }
+            if(flag == 0)
+            {
+                e++;
+            }
+        }
+    }
+  
+    if(c1 == 0)
+       printf("-1");
+    else 
+       for(int i=0; i<l - e; i++)
+               printf("%c", a[i]);
+}
