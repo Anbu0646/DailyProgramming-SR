@@ -72,6 +72,40 @@ Output:
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{ 
+    int r, c, i, j, a[100][100], b[100][100];
+    scanf("%d %d", &r, &c);
+    
+    for(i=0; i<r; i++)
+    {
+        for(j=0; j<c; j++)
+            scanf("%d", &a[i][j]);
+    }
+    
+    for(i=0; i<r; i++)
+    {
+        for(j=0; j<c; j++)
+            scanf("%d", &b[i][j]);
+    }
+    
+    for(i=0; i<r; i++)  
+    {
+        for(j=0; j<c; j++)
+        {
+            if(a[i][j] == b[i][j])
+                printf("%d ", a[i][j]);
+            else
+                printf("* ");
+        }
+  printf("\n");
+  }
+}
+
+/*
 R, C = map(int, input().split())
 Mat_1 = [list(map(int, input().split())) for i in range(R)]
 Mat_2 = [list(map(int, input().split())) for i in range(R)]
@@ -88,3 +122,4 @@ for i in range(R):
     for j in range(C):
         print(Mat_3[i][j], end=" ")
     print()
+*/
