@@ -32,3 +32,18 @@ Output: antntt
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[101];
+    scanf("%s", &s);
+  
+    for(int i=0; s[i]; i++)
+    {
+        for(int j=i; s[j]; j++) 
+            printf("%c", s[j]);
+    }
+}
