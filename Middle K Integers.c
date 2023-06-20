@@ -47,3 +47,20 @@ Output:
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    long int i, j, a[100000], p, n, k;
+    scanf("%ld %ld", &n, &k);
+ 
+    for(i=0; i<n; i++)
+        scanf("%ld ", &a[i]);
+   
+    p=(n - k)/2;
+   
+    for(i=n - p - 1; i>=p; i--)
+        printf("%ld ",a[i]);
+}
