@@ -44,3 +44,14 @@ Output: 1
 
 SOLUTION:
 */
+
+N, X = map(int, input().split())
+Arr = list(map(int, input().split()))
+Count = 0
+
+for i in range(N - X + 1):
+    Numb = Arr[i:i+X]
+    if(len(set(Numb))) == X:
+        Count += 1
+
+print(Count)
