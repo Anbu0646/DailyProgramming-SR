@@ -49,7 +49,41 @@ Output:
 SOLUTION:
 */
 
-R, C, K = map(int, input().split())
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r, c, n;
+    scanf("%d %d %d", &r, &c, &n);
+    int a[r][c];
+    
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<c; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            for(int k=0; k<c; k++)
+            {
+                for(int p=0; p<n; p++)
+                {
+                    printf("%d ", a[i][k]);
+                }
+            }
+            printf("\n");
+        }
+    }
+
+}
+
+/*R, C, K = map(int, input().split())
 Mat = [list(map(int, input().split())) for i in range(R)]
 #print(R, C, K)
 for i in Mat:
@@ -58,3 +92,4 @@ for i in Mat:
             for m in range(K):
                 print(j, end=" ")
         print()
+*/
