@@ -27,3 +27,18 @@ Output: 0
 
 SOLUTION:
 */
+
+/*
+String = input().strip()
+Len = len(String)
+
+if String == String[::-1]:
+    print(0)
+else:
+    for i in range(Len):
+        if String[i:] == String[i:][::-1]:
+            print(i)
+            break
+    else:
+        print(N - 1)
+*/
