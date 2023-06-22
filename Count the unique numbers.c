@@ -44,7 +44,38 @@ Output: 1
 
 SOLUTION:
 */
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int a[10000], m, i, n, j, k, f, c = 0;
+    scanf("%d %d", &n, &m);
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    for(i=0; i<=n - m; i++)
+    {
+        f = 0;
+        for(j=i; j<i + m; j++)
+        {
+            for(k=j + 1; k<i + m; k++)
+            {
+                if(a[j] == a[k])
+                {
+                    f = 1;
+                }
+            }
+        }
+        if(f == 0)
+        {
+            c++;
+        }
+    }
+    printf("%d", c);
+}
+/*
 N, X = map(int, input().split())
 Arr = list(map(int, input().split()))
 Count = 0
@@ -55,3 +86,4 @@ for i in range(N - X + 1):
         Count += 1
 
 print(Count)
+*/
