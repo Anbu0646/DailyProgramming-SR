@@ -28,6 +28,34 @@ Output: 0
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int isPal(char s[], int x, int y)
+{
+    while(x < y)
+    {
+        if(s[x] != s[y])
+            return 0;
+        x++;
+        y--;
+    }
+    return 1;
+}
+int main()
+{
+    char s[1000];
+    scanf("%s", s);
+    for(int i=0; i<strlen(s); i++)
+        if(isPal(s, i, strlen(s) - 1))
+        {
+            printf("%d", i);
+            break;
+        }
+}
+
+
+
 /*
 String = input().strip()
 Len = len(String)
