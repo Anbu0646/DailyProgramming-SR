@@ -32,6 +32,34 @@ Output:  -1
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+  unsigned long long int a, n, m, f = 0;
+  scanf("%llu", &a); 
+  while(a>0)
+  {
+     n = a;
+     while(n>0)
+     {
+        m = n % 10;
+        if(m%2 != 0)
+        {
+            printf("%d ", m);
+            f = 1;
+        }
+    n /= 10;
+    }
+a /= 10;
+}
+ 
+ if(f == 0)
+    printf("-1");
+}
+
+
 /*
 N = input().strip()
 Flag = 0
