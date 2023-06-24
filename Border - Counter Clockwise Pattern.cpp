@@ -1,5 +1,37 @@
 /*
+The program must accept two integers N and X as the input. The program must print the desired pattern as shown in the Example Input/Output section. 
 
+Boundary Condition(s): 
+
+1 <= N <= 50 
+1 <= X <= 200 
+
+Input Format:  The first line contains the values of N and X separated by a space. 
+
+Output Format: The lines containing the desired pattern as shown in the Example Input/Output section. 
+
+Example Input/Output 1: 
+
+Input:  4 10 
+
+Output: 
+
+1 * * 10 
+2 - - 9 
+3 - - 8
+4 5 6 7 
+
+Example Input/Output 2: 
+
+Input: 5 19 
+
+Output: 
+
+1 16 15 14 13 
+2 - - - 12 
+3 - - - 11 
+4 - - - 10 
+5 6 7 8 9
 
 SOLUTION:
 */
