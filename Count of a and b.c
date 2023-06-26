@@ -20,3 +20,31 @@ Output: 3b
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+{
+    int c = 0;
+    char s[108];
+    scanf("%s", s);
+    char ch = s[0];
+  
+    for(int i=0, l=strlen(s) ; (i < l) ; i++)
+    {
+        if(s[i] == ch)
+        {
+            c++;
+        }
+        else
+        {
+            printf("%d%c", c, s[i-1]);
+            c = 1;
+            ch = s[i];
+        }
+    }
+  
+    printf("%d%c", c, ch);
+}
