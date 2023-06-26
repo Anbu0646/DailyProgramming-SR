@@ -48,3 +48,17 @@ int main()
   
     printf("%d%c", c, ch);
 }
+
+/*
+x = input().strip()
+p = x[0]
+t = 0
+for i in x:
+    if p==i:
+        t += 1
+    else:
+        print(str(t)+p,end='')
+        t=1
+        p=i
+print(str(t)+p)
+*/
