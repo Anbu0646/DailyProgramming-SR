@@ -26,6 +26,43 @@ Output: auuuracy
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1000], ch;
+    scanf("%s %c", s, &ch);
+    int i, j, l, c = 0;
+    l = strlen(s);
+    
+    for(i=0; i<l; i++)
+    {
+        if(s[i] == ch)
+        {
+            c = 0;
+            for(j=i + 1; j<l; j++)
+            {
+                if(s[j]=='a' || s[j]=='e' || s[j]=='i' || s[j]=='o' || s[j]=='u')
+                {
+                    c++;
+                    printf("%c", s[j]);
+                    break;
+                }
+            }
+            if(c==0)
+            {
+                printf("%c", s[i]);
+            }
+        }
+        else
+        {
+            printf("%c", s[i]);
+        }
+    }
+}
+
+/*
 String, Character = map(str, input().split())
 
 Vowels = "aeiou"
@@ -43,3 +80,4 @@ for i in range(len(String)):
             print(String[i], end="")
     else:
         print(String[i], end="")
+*/
