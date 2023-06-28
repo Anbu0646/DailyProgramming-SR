@@ -19,8 +19,8 @@ Example Input/Output 1:
 
 Input: 
 
-hello  world 
-o  l 
+hello world 
+o l 
 
 Output: 1
 
@@ -35,10 +35,52 @@ Example Input/Output 2:
 
 Input: 
 
-may  i  know  your  good  name  
-a  m 
+may i know your good name  
+a m 
 
 Output: 0
 
 SOLUTION:
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1001], a, b;
+    scanf("%[^\n] %c %c", s, &a, &b);
+    int m = 9999;
+    
+    for(int i=0; i<strlen(s); i++)
+    {
+        if(s[i] == a)
+        {
+            for(int j=i + 1; j<strlen(s); j++)
+            {
+                if(s[j] == b)
+                {
+                    m = fmin((j - i), m);
+                    break;
+                }
+            }
+        }
+    }
+    printf("%d", m - 1);
+}
+/*
+s = input().strip()
+a, b = map(str,input().split())
+c = 0
+m = 99999
+
+for i in range(len(s)):
+    if s[i] == a:
+        for j in range(i + 1, len(s)):
+            if s[j] == b:
+                c = j - i
+                break
+        if c<m :
+            m = c
+print(m - 1)            
 */
