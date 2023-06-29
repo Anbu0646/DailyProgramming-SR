@@ -68,13 +68,13 @@ int main()
     
     int Negative_count_max = 0, Negative_Column = -1;
     
-    for(int j=0; j<C; j++)
+    for(int i=0; i<C; i++)
     {
         int Negative_count = 0;
         
-        for(int i=0; i<R; i++)
+        for(int j=0; j<R; j++)
         {
-            if(Mat[i][j] < 0)
+            if(Mat[j][i] < 0)
                 Negative_count += 1;
         }
         
