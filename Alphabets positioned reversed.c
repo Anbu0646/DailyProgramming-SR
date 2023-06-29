@@ -46,3 +46,21 @@ Output:
 
 SOLUTION:
 */
+
+
+
+/*
+N = int(input())
+String = input().split()
+    
+positions = []    
+    
+for i in reversed(String):
+    temp = i.lower()
+    if 'a' <= temp <= 'z':
+        positions.append(ord(temp) - ord('a') + 1)
+    else:
+        positions.append(0)
+
+print(*positions)
+*/
