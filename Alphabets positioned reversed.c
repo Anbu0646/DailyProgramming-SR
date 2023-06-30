@@ -47,20 +47,34 @@ Output:
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int N;
+    scanf("%d\n", &N);
+    char s[N];
+    int arr[N];
+    
+    for(int i=0; i<N; i++)
+    {
+        scanf("%c ", &s[i]);
+        s[i] = tolower(s[i]);
+        arr[i] = (int)(s[i]) - 96;
+        
+    }
+    
+    for(int i=N - 1; i>=0; i--)
+    {
+        printf("%d ", arr[i]);
+    }
+
+}
 
 /*
-N = int(input())
-String = input().split()
-    
-positions = []    
-    
-for i in reversed(String):
-    temp = i.lower()
-    if 'a' <= temp <= 'z':
-        positions.append(ord(temp) - ord('a') + 1)
-    else:
-        positions.append(0)
-
-print(*positions)
+s = 'abcdefghijklmnopqrstuvwxyz'
+n = int(input())
+l = input().strip().split()
+print(*[s.index(i.lower()) + 1 for i in l[::-1]])
 */
