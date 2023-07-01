@@ -30,3 +30,62 @@ Output: CT-V-T-S
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int isvowel(char d)
+{
+    d = tolower(d);
+    return d == 'a' || d == 'e' || d == 'i' || d == 'o' || d == 'u';
+}
+
+int main()
+{
+    char s[1001];
+    scanf("%s", s);
+  
+    for(int i=0; s[i]; )
+    {
+        if(isvowel(s[i]))
+        {
+            int p = i;
+            while(isvowel(s[i]) && i<strlen(s))
+            {
+               i++;
+            } 
+            if(!(p == 0 || i == strlen(s))) 
+                 printf("-");
+        }
+        else 
+        {
+            printf("%c", s[i]);
+            i++;
+        }
+    }
+    return 0;
+}
+/*
+n = input().strip()
+a = 'aeiouAEIOU'
+
+for j in range(len(n)):
+    if n[j] in a and j == 0:
+        continue
+    if n[j] in a and j == len(n) - 1:
+        continue
+    elif n[j] in a and n[j - 1] not in a:
+        print("-", end = "")
+    elif n[j] in a and n[j - 1] in a:
+        continue
+    else:
+        print(n[j], end = "")
+
+
+ALITER:
+
+import re
+s = input()
+print('-'.join(re.split('[aeiouAEIOU]+', s)).strip('-'))
+
+*/
