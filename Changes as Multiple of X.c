@@ -80,5 +80,38 @@ int main()
 }
 
 /*
+Aliter:
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, a, b, c = 0;
+    scanf("%d %d ", &n, &b);
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d ", &a);
+        if(a % b == 0) 
+           c = a;
+        printf("%d ", c != 0 ? c : a);
+    }
+
+}
+
+PY3:
+
+N, X = map(int,input().split()) 
+l = list(map(int,input().split())) 
+k = 0
+
+for i in l: 
+    if(i % X == 0): 
+        print(i, end = " ") 
+        k = i 
+    else: 
+        if(k != 0): 
+            print(k, end = " ") 
+        else: 
+            print(i, end = " ")
 */
