@@ -47,3 +47,84 @@ Output: no
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+  int a, t = 0;
+  
+  scanf("%d", &a);
+  
+  char ch[100];
+  
+  for(int i=0; i<a; i++)
+  {
+      scanf("%s", ch);
+      int l = strlen(ch);
+      if(l >= t)
+      {
+          t = l;
+      }
+      else
+      {
+          printf("no");
+          return 0;
+      }
+  }
+  printf("yes");
+}
+/*
+PY3:
+
+ac = int(input())
+ti = [len(i) for i in list(input().split())]
+print('yes' if ti == sorted(ti) else 'no')
+
+
+
+n=int(input())
+l=list(input().split())
+for i in range(n-1):
+    if(len(l[i])>len(l[i+1])):
+        print('no')
+        exit()
+print('yes')
+
+CPP:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    long int n, x;
+    cin>>n;
+    
+    vector<int>vp;
+    
+    for(int i=0; i<n; i++)
+    {
+        cin>>x;
+        int c = 0;
+        
+        while(x > 0)
+        {
+            c++;
+            x /= 10;
+        }
+        
+        vp.push_back(c);
+    }
+    
+    vector<int>v = vp;
+    sort(v.begin(), v.end());
+    
+    if(v == vp)
+       cout<<"yes";
+    else 
+       cout<<"no";
+}
+
+*/
