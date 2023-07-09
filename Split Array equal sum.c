@@ -1,4 +1,4 @@
-'''
+/*
 The program must accept an integer array of size N as the input. 
 The program must print YES if it is possible to split the array into two sides so that the sum of the integers on one side is equal to the sum of the integers on the other side. 
 Else the program must print NO as the output. 
@@ -43,8 +43,32 @@ Input:
 Output: NO
 
 SOLUTION:
-'''
+*/
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, s=0, a[100], k=0;
+    scanf("%d ", &n);
+    for(int i=0; i<n; i++) scanf("%d ", &a[i]), s += a[i];
+    
+    for(int i=0; i<n; i++)
+    {
+        if(k == s)
+        {
+            printf("YES");
+            return 0;
+        }
+        k += a[i], s -= a[i];
+    }
+    printf("NO");
+}
+
+
+
+/*
 N = int(input())
 Arr = list(map(int, input().split()))
 
@@ -58,3 +82,4 @@ for i in range(N):
         exit()
         
 print("NO")
+*/
