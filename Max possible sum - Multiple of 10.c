@@ -41,3 +41,54 @@ Output: -1
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    int sum = 0;
+  
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+        sum+=a[i];
+    }
+  
+    int max = 0, x = 0;
+
+    for(int i=0; i<n; i++)
+    {
+        if(sum - a[i] > max && (sum - a[i]) % 10 == 0)
+        {
+           max = sum - a[i];
+           x=a[i];
+        }
+    }
+  
+    if(x > 0)
+    {
+       printf("%d", x);
+    }
+    else
+    {
+       printf("-1");
+    }
+}
+
+/*
+PY3:
+
+x=int(input())
+a=list(map(int,input().split()))
+y=sum(a)
+a.sort()
+for i in a:
+    if((y-i)%10==0):
+        print(i)
+        exit()
+print(-1)
+*/
