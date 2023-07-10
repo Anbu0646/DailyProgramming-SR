@@ -51,14 +51,14 @@ int main()
 
     scanf("%d %s", &N, &String);
 
-    int Length = strlen(String);
+    long int Length = strlen(String);
 
-    for(int i=0; i<N - 1; i++)
+    for(int i=0; i<N; i++)
     {
         Length *= 2; 
     }
 
-    printf("%d", Length * 2);
+    printf("%ld", Length);
 }
 
 /*
