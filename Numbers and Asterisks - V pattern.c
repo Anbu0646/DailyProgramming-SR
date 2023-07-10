@@ -33,3 +33,41 @@ Output:
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    
+    int n = 1, p = 0, f = (2 * N) - 2;
+    
+    for(int i=0; i<N; i++)
+    {
+        n = 1;
+        for(int j=0; j<(2 * N) - 1; j++)
+        {
+            if(p <= j && j <= f)
+            {
+                if( (i % 2 != 0 && j % 2 != 0) || (i % 2 == 0 && j % 2 == 0) )
+                {
+                    printf("%d", n++);
+                }
+                else
+                {
+                    printf("*");
+                }
+            }
+            else
+            {
+                printf("*");
+            }
+        }
+        
+        p += 1;
+        f -= 1;
+        printf("\n");
+    }
+}
