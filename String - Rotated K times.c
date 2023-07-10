@@ -57,3 +57,79 @@ Output: NO
 
 SOLUTION:
 */
+
+#include <stdio.h>
+#include <string.h>
+
+void rotateString(char* str, int k) 
+{
+    int len = strlen(str);
+    k = k % len;
+
+    char temp[len + 1];
+    strcpy(temp, str);
+
+    for (int i = 0; i < len; i++) {
+        str[i] = temp[(i + k) % len];
+    }
+}
+
+int main() {
+    char a[100], b[100];
+    scanf("%s %s", a, b);
+
+    int c;
+    scanf("%d", &c);
+
+    c = c % strlen(a);
+
+    char temp[strlen(a) + 1];
+    strcpy(temp, a);
+
+    rotateString(a, c);
+    rotateString(temp, strlen(a) - c);
+
+    if (strcmp(b, a) == 0 || strcmp(b, temp) == 0) 
+    {
+        printf("YES");
+    } 
+    else 
+    {
+        printf("NO");
+    }
+
+    return 0;
+}
+/*
+PY3:
+
+from collections import deque
+
+one=input().strip()
+two=input().strip()
+
+a=deque(one)
+b=deque(two)
+
+n=int(input())
+
+c=deque(one)
+d=deque(one)
+
+c.rotate(-n)
+d.rotate(n)
+
+
+if c==b or d==b:
+    print("YES")
+else:
+    print("NO")
+
+
+s1 = input().strip()
+s2 = input().strip()
+k = int(input()) % len(s1)
+print("YES" if s1[k:]+s1[:k] == s2 or s1[-k:] + s1[:-k] == s2 else "NO")
+
+
+*/
