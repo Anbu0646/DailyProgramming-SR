@@ -48,7 +48,17 @@ int main()
     }
   
     printf("%d", m);
-    
-    
-
 }
+
+/*
+PY3:
+
+a, b = input().strip().split()
+b = b[::-1]
+s = 0
+
+for i in range(len(a)):
+    s += (int(a[i]) * int(b[i]))
+
+print(s)
+*/
