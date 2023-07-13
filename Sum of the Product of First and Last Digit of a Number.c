@@ -30,3 +30,25 @@ Output: 110
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char a[1000], s[10000];
+    
+    scanf("%s %s", &a, &s);
+    
+    int h = strlen(s), m = 0;
+  
+    for(int i = 0, j = h - 1; i<h, j>=0; i++, j--)
+    {
+        m += (a[i] - 48) * (s[j] - 48);
+    }
+  
+    printf("%d", m);
+    
+    
+
+}
