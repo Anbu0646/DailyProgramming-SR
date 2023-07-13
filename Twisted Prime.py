@@ -15,23 +15,20 @@ Output: NO
 
 SOLUTION:
 '''
+import math
 
 def ispalin(n):
-    if n < 2:
-        return False
-    if n == 2:
-        return True
-    if n % 2 == 0:
-        return False
-    for i in range(3, int(n**0.5) + 1, 2):
+    n = int(n)
+    if n <= 1:
+        return 0
+    for i in range(2, int(math.sqrt(n))):
         if n % i == 0:
-            return False
-    return True
+            return 0
+    return 1
     
 N = int(input())
 N1 = int(str(N)[::-1])
 
-if ispalin(N):
-    if ispalin(N1): print("YES")
-    else: print("NO")
+if ispalin(N) and ispalin(N1): print("YES")
 else: print("NO")
+
