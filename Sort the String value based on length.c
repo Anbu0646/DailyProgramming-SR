@@ -68,3 +68,14 @@ gentleman
 
 SOLUTION:
 */
+
+N = int(input())
+Strings = []
+
+for i in range(N):
+    Strings.append(input().rstrip())
+
+Strings = sorted(Strings, key = lambda x : len(x))
+
+for i in Strings:
+    print(i)
