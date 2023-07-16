@@ -77,6 +77,7 @@ int main()
     int n, mn = 100, mx = 0;
     scanf("%d", &n);
     char s[n][100];
+    
     for(int i=0; i<n; i++)
     {
         scanf("%s\n", s[i]);
@@ -102,6 +103,58 @@ int main()
 
 
 /*
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    char s[n][100];
+    
+    for(int i=0; i<n; i++)
+    {
+        scanf("%s", s[i]);
+    }
+    
+    int arr[100];
+    
+    for(int i=0; i<n; i++)
+    {
+        arr[i] = strlen(s[i]);
+    }
+    
+    int a;
+    
+    for(int i=0; i<n; i++)
+    {
+        for(int j=i+1; j<n; j++)
+        {
+            if(arr[i] > arr[j])
+            {
+                a = arr[i];
+                arr[i] = arr[j];
+                arr[j] = a;
+            }
+        }
+    }
+    
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(arr[i] == strlen(s[j]))
+            {
+                printf("%s", s[j]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+
+
+PY3:
 N = int(input())
 Strings = []
 
