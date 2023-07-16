@@ -69,6 +69,39 @@ gentleman
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, mn = 100, mx = 0;
+    scanf("%d", &n);
+    char s[n][100];
+    for(int i=0; i<n; i++)
+    {
+        scanf("%s\n", s[i]);
+        int l = strlen(s[i]);
+        if(l < mn)
+           mn = l;
+        if(l>mx)
+           mx = l;
+    }
+    
+    for(int i=mn; i<=mx; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(strlen(s[j]) == i)
+            {
+                printf("%s\n", s[j]);
+            }
+        }
+    }
+
+}
+
+
+/*
 N = int(input())
 Strings = []
 
@@ -79,3 +112,4 @@ Strings = sorted(Strings, key = lambda x : len(x))
 
 for i in Strings:
     print(i)
+*/
