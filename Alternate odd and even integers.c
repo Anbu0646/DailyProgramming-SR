@@ -38,3 +38,31 @@ Hence 3 is printed as the output.
 
 SOLUTION:
 */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int arr[100000], i = 0, one = 0, f = 1, two = 0;
+    while(scanf("%d", &arr[i]) == 1)
+    {
+        if(arr[i] % 2 == f)
+        {
+            one++;
+        }
+        i++;
+        f = !f;
+    }
+    f = 0;
+    for(int index = 0; index < i; index++)
+    {
+        if(arr[index] % 2 == f)
+        {
+            two++;
+        }
+        f = !f;
+    }
+    // printf("%d %d\n",one,two);
+    printf("%d", (int) fmin(one, two));
+}
