@@ -66,3 +66,68 @@ int main()
     // printf("%d %d\n",one,two);
     printf("%d", (int) fmin(one, two));
 }
+
+/*
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int a[10000000], l = 0;
+    
+    while((scanf("%d", &a[l])) > 0)
+    {
+        l++;
+    }
+    
+    int c = 0, d = 0;
+    
+    for(int i=0; i<l; i++)
+    {
+        if(i % 2 == 0 && a[i] % 2 != 0)
+        {
+            c++;
+        }
+        else if(i % 2 != 0 && a[i] % 2 == 0)
+        {
+            c++;
+        }
+    }
+    
+    for(int i=0; i<l; i++)
+    {
+        if(i % 2 == 0 && a[i] %2 == 0)
+        {
+            d++;
+        }
+        else if(i % 2 != 0 && a[i] % 2 != 0)
+        {
+            d++;
+        }
+    }
+    if(c < d)
+    {
+        printf("%d", c);
+    }
+    else
+    {
+        printf("%d", d);
+    }
+}
+
+
+
+
+PY3:
+
+l=list(map(int,input().split()))
+x=y=0
+for i in range(len(l)):
+    if i%2==0:
+        x+=l[i]%2
+        y+=(l[i]+1)%2
+    else:
+        x+=(l[i]+1)%2
+        y+=l[i]%2
+print(min(x,y)) 
+*/
