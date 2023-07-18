@@ -1,5 +1,8 @@
 '''
-The program must accept two string values S1 and S2 as the input. The program must print the longest substring from S1 which does not contain S2. If more than one longest substring is found from S1 then the program must print the first occurring substring in the given order as the output. If there is no such substring then the program must print -1 as the output. 
+The program must accept two string values S1 and S2 as the input. 
+The program must print the longest substring from S1 which does not contain S2. 
+If more than one longest substring is found from S1 then the program must print the first occurring substring in the given order as the output. 
+If there is no such substring then the program must print -1 as the output. 
 
 Boundary Condition(s):  1 <= length of S1, S2 <= 1000 
 
