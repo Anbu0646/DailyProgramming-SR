@@ -1,4 +1,4 @@
-/*
+'''
 The program must accept a floating point value N as the input. 
 The program must reverse integer part and fraction part and print the modified floating point value with the precision up to two decimal places. 
 
@@ -26,4 +26,11 @@ Input:  10005.200
 Output: 50001.00
 
 SOLUTION:
-*/
+'''
+
+N = input().strip()
+Int_part, Frac_part = N.split('.')
+Int_part = Int_part[::-1]
+Frac_part = Frac_part[::-1]
+Reversed_N = float(Int_part + '.' + Frac_part)
+print("%.2f"%Reversed_N)
