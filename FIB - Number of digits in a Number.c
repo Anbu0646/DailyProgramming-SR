@@ -36,6 +36,21 @@ int main()
 SOLUTION:
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int N, numOfDigits;
+    scanf("%d%n", &N, &numOfDigits);
+    printf("%d", numOfDigits);
+    return 0;
+}
+     //If space is occured,
+    // scanf("%d %n", &N, &numOfDigits);
+    //printf("%d", numOfDigits - 1);
+
+/*
 #include <stdio.h> 
 #include <stdlib.h> 
 
@@ -46,3 +61,4 @@ int main()
     printf("%d", snprintf(NULL, 0, "%d", N)); 
     return 0; 
 }
+*/
