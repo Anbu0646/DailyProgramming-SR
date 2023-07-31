@@ -35,3 +35,53 @@ Output: aeiBco
 
 SOLUTION:
 '''
+
+s = input().strip()
+s = [i for i in s]
+
+for i in range(len(s)):
+    if s[i].lower() in "aeiou":
+        for j in range(i + 1, len(s)):
+            if s[j].lower() not in "aeiou":
+                s[j] = s[j].swapcase()
+                break
+print("".join(s))
+
+'''
+CPP:
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int isVowel(char ch)
+{
+    return ch=='a'||ch=='e'||ch=='i'||ch=='u'||ch=='o';
+}
+
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    for(int i=0; i<s.size(); i++)
+    {
+        if(isVowel(s[i]))
+        {
+            int j = i;
+            while(isVowel(s[j]) && j<s.size())
+            {
+                j++;
+            }
+            if(islower(s[j]))
+            {
+                s[j] = toupper(s[j]);
+            }
+            else
+            {
+                s[j] = tolower(s[j]);
+            }
+        }
+    }
+    cout<<s;
+}
+'''
