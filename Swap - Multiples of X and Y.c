@@ -56,6 +56,58 @@ Output:
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, x, y;
+    scanf("%d", &n);
+    int a[n];
+    
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    
+    scanf("%d %d",&x,&y);
+    
+    int s, h;
+    
+    for(int i=0; i<n; i++)
+    {
+        if(a[i] % x == 0)
+        {
+            s = i;
+            break;
+        }
+    }
+    
+    for(int j=n - 1; j>=0; j--)
+    {
+        if(a[j] % y == 0)
+        {
+            h = j;
+            break;
+        }
+    }
+    
+    for(int i=0; i<n; i++)
+    {
+        if(i == s)
+        {
+            printf("%d ", a[h]);
+        }
+        else if(i == h)
+        {
+            printf("%d ", a[s]);
+        }
+        else
+        {
+            printf("%d ", a[i]);
+        }
+    }
+}
 
 /*
 PY3:
