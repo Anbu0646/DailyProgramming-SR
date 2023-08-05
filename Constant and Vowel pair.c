@@ -35,7 +35,7 @@ SOLUTION:
 
 int isv(char c)
 {
-    c=tolower(c);
+    c = tolower(c);
     if(c == 'a' || c == 'e'||c == 'i' || c == 'o' || c == 'u')
     {
         return 0;
@@ -67,6 +67,5 @@ Vowels = "aeiouAEIOU"
 
 for i in range(0, len(String) - 1):
     if String[i] not in Vowels and String[i + 1] in Vowels:
-        print(String[i], end="")
-        print(String[i + 1], end=" ")
+        print(String[i] + String[i + 1], end=" ")
 */
