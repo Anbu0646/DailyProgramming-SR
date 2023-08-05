@@ -30,7 +30,34 @@ Output: TE LE VI SI
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
 
+int isv(char c)
+{
+    c=tolower(c);
+    if(c == 'a' || c == 'e'||c == 'i' || c == 'o' || c == 'u')
+    {
+        return 0;
+    }
+    
+    return 1;
+}
+
+int main()
+{
+    char s[10000];
+    int l;
+    scanf("%s%n", s, &l);
+    
+    for(int i=0; i<l - 1; i++)
+    {
+        if(isv(s[i]) == 1 && isv(s[i + 1]) == 0)
+        {
+            printf("%c%c ", s[i], s[i + 1]);
+        }
+    }
+}
 
 /*
 PY3:
