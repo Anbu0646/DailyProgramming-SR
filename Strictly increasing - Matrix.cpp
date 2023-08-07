@@ -46,6 +46,45 @@ Output: NO
 Solution:
 */
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int r, c;
+    cin>>r>>c;
+    
+    int mat[r][c];
+    for(int i=0; i<r; i++)
+        for(int j=0; j<c; j++)
+            cin>>mat[i][j];
+    
+    for(int i=0; i<r; i++)
+    {
+        for(int j=0; j<c - 1; j++)
+        {
+            if(mat[i][j] >= mat[i][j + 1])
+            {
+                cout<<"NO";
+                return 0;
+            }
+        }
+    }
+    
+    for(int j=0; j<c; j++)
+    {
+        for(int i=0; i<r - 1; i++)
+        {
+            if(mat[i][j] >= mat[i + 1][j])
+            {
+                cout<<"NO";
+                return 0;
+            }
+        }
+    }
+    cout<<"YES";
+    return 0;
+}
 
 /*
 PY3:
