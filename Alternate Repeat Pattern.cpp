@@ -86,7 +86,36 @@ int main()
     }
 }
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+int n;
+scanf("%d",&n);
+for(int i=0;i<n/2;i++)
+{
+    for(int j=0;j<=n;j++)
+    {
+        if(j<=i)
+        {
+            printf("%d",i+1);
+        }
+        else
+        {
+            printf("%d",n-i);
+        }
+    }
+    printf("\n");
+}
+}
+
 
 PY3:
+
+n = int(input())
+for x in range(1, n//2+1):
+    print(str(x)*x + str(n-x+1)*(n-x+1))
+
 
 */
