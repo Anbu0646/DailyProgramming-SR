@@ -48,9 +48,52 @@ Output:30/08/1990
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a = 32, b = 13, c = 20000;
+  
+    for(int i=0; i<n; i++) 
+    {
+        int a1,b1,c1;
+        scanf("%d/%d/%d",&a1,&b1,&c1);
+        if(c1<c)
+        {
+          a = a1;
+          b = b1;
+          c = c1;
+        }
+        else if(c == c1 && b1<b)
+        {
+          a = a1;
+          b = b1;
+          c = c1;
+        }
+        else if(c == c1 && b == b1 && a1<a)
+        {
+          a = a1;
+          b = b1;
+          c = c1;
+        }
+    }
+  
+    printf("%.2d/%.2d/%.4d", a, b, c);
+} 
+
 /*
 PY3:
 
+n=int(input())
+ds=[]
+for i in range(n):
+    d=input()
+    day,month,year=map(int,d.split('/'))
+    ds.append((year,month,day,d))
+ds.sort()
+print(ds[0][3])
 
-C:
 */
