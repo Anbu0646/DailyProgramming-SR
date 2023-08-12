@@ -57,5 +57,80 @@ int main()
 /*
 CPP:
 
+C:
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+    char str[101];
+    scanf("%s", str);
+    long long int sum = 0;
+    int count = 0, len = strlen(str);
+    
+    for(int i = len - 1; i >=0; i--)
+    {
+        if(str[i] == 'a')
+        {
+            int temp = 1;
+            sum = sum + (temp * (pow(2, count)));
+        }
+        count++;
+    }
+    printf("%lld", sum);
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main()
+{
+    char str[101];
+    scanf("%s", str);
+    
+    int arr[100], z = 0;
+    
+    for(int i=0; i<strlen(str); i++)
+    {
+        if(str[i] == 'a')
+        {
+            arr[z]=1;
+            z++;
+        }
+        else
+        {
+            arr[z] = 0;
+            z++;
+        }
+    }
+    
+    int s = 0, a = 0;
+    
+    for(int i = z - 1; i>=0; i--)
+    {
+        if(arr[i] == 1)
+        {
+            s += pow(2, a);
+            a++;
+        }
+        else
+        {
+            a++;
+        }
+    }
+    printf("%d", s);
+}
+
 PY3:
+a=input ().strip()
+x=''
+for i in a:
+    if i=='a':
+        x+='1'
+    else:
+        x+='0'
+
+print(int(x,2))
 */
