@@ -45,3 +45,68 @@ Output: 12 -12
 
 SOLUTION:
 */
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    map<int, int> mp;
+    
+    for(int i=0; i<n; i++)
+    {
+        cin>>v[i];
+        mp[v[i]] = 1;  
+    }
+
+    for(int i=0; i<n; i++)
+    {
+        if(mp[v[i]] && mp[-1 * v[i]])
+            cout<<v[i]<<" ";
+    }
+
+}
+
+/*
+C:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d\n", &n);
+    int a[n];
+    
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d ", &a[i]);
+    }
+    
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(-1 * a[i] == a[j])
+            {
+                printf("%d ", a[i]);
+                break;
+            }
+        }
+    }
+}
+
+PY3:
+
+n = int(input())
+l = list(map(int,input().split()))
+for i in l:
+    k = i * -1
+    if k in l:
+        print(i, end = " ")
+*/
