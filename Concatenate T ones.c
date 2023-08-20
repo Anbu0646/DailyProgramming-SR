@@ -62,3 +62,36 @@ int main()
     
     printf("%d", sum);
 }
+
+/*
+PY3:
+
+x=int(input())
+y=bin(x)[2:]
+z=''
+for i in y:
+    if i=='1':
+        z+=i
+print(int(z,2))
+
+C:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,c=0,s=0;
+    scanf("%d",&n);
+    while(n)
+    {
+        if(n%2==1)
+        {
+            s=s+pow(2,c);
+            c++;
+        }
+        n/=2;
+    }
+    printf("%d",s);
+}
+*/
