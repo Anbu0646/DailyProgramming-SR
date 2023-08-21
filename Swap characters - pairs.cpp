@@ -57,3 +57,24 @@ Output: RackSkill
 
 SOLUTION:
 */
+
+
+
+/*
+PY3:
+String = input()
+Ord = []
+
+for i in range(0, len(String)):
+    Ord.append(ord(String[i]))
+
+Len = int(input())
+
+for i in range(0, Len):
+    pair_1, pair_2 = map(int, input().split())
+    Ord[pair_1 - 1], Ord[pair_2 - 1] = Ord[pair_2 - 1], Ord[pair_1 - 1]
+
+for i in range(0, len(Ord)):
+    print(chr(Ord[i]), end="")
+
+*/
