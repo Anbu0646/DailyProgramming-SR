@@ -58,23 +58,57 @@ Output: RackSkill
 SOLUTION:
 */
 
+#include <iostream>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    string st;
+    cin>>st;
+    int n;
+    cin>>n;
+    for(int x, y, i = 0; i < n; i++)
+    {
+        cin>>x;
+        cin>>y;
+        swap(st[x - 1], st[y - 1]);
+    }
+    cout<<st;
+}
 
 /*
 PY3:
-String = input()
-Ord = []
-
-for i in range(0, len(String)):
-    Ord.append(ord(String[i]))
-
+String = input().strip()
 Len = int(input())
+Ord = list(String)
 
-for i in range(0, Len):
+for i in range(Len):
     pair_1, pair_2 = map(int, input().split())
     Ord[pair_1 - 1], Ord[pair_2 - 1] = Ord[pair_2 - 1], Ord[pair_1 - 1]
 
-for i in range(0, len(Ord)):
-    print(chr(Ord[i]), end="")
+print(*Ord, sep = " ")
 
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char a[1000];    
+    int n, b, c, i;
+    scanf("%s", a);    
+    scanf("%d", &n);
+    
+    for(i=0;i<n;i++)
+    {
+        scanf("%d %d", &b, &c);
+        char t = a[b - 1];
+        a[b - 1] = a[c - 1];
+        a[c - 1] = t;
+    }
+    
+    printf("%s", a);
+}
 */
