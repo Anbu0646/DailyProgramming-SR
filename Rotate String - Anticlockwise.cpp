@@ -44,7 +44,32 @@ Output: hi
 SOLUTION :
 */
 
+#include<stdio.h>
+#include<string.h>
 
+void rotateAnticlockwise(char *str,int rotations)
+{
+        int length = strlen(str);
+        rotations = rotations % length;
+        for(int i=0; i<rotations; i++)
+        {
+            char temp = str[0];
+            for(int j=0; j<length - 1; j++)
+            {
+                str[j] = str[j + 1];
+            }
+            str[length - 1] = temp;
+        }
+}
+int main()
+{
+        char inputstring[100];
+        int rotations;
+        scanf("%s%d",inputstring, &rotations);
+        rotateAnticlockwise(inputstring, rotations);
+        printf("%s\n", inputstring);
+return 0;
+}
 
 /*
 C:
@@ -62,6 +87,26 @@ int main()
     for(int i=Limit; i<len; printf("%c", String[i++]));
     for(int i=0; i<Limit; printf("%c", String[i++]));
     
+}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[100];
+    scanf("%s",s);
+    int n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        char c=s[0];
+        for(int j=0;j<strlen(s)-1;j++){
+            s[j]=s[j+1];
+        }
+        s[strlen(s)-1]=c;
+    }
+    printf("%s",s);
 }
 
 */
