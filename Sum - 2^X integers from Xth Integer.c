@@ -76,8 +76,38 @@ int main()
 
 /*
 PY3:
+n=int(input())
+l=list(map(int,input().split()))
+m=int(input())
+if (2**m)>=n:
+    print(sum(l[m-1:]))
+else:
+    print(sum(l[x] for x in range(m-1,m-1+(2**m))))
 
 CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n,x,sum=0;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    cin>>x;
+    int m = pow(2,x);
+    // cout<<x<<" "<<m<<" ";
+    for(int i=x-1;i<x+m-1;i++){
+        // cout<<a[i] <<" ";
+        if(i< n)
+            sum+=a[i];
+        else
+            break;
+    }
+    cout<<sum;
+}
 
 */
