@@ -57,7 +57,62 @@ Output: NO
 
 SOLUTION:
 */
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    vector<int> a(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    int b[3]={1,0,0};
+    if(a[0]!=25){
+        cout<<"NO";
+        return 0;
+    }
+    for(int i=1;i<n;i++){
+        if(a[i]==25) b[0]++;
+        else{
+            if(a[i]==50){
+                if(b[0]>0){
+                    b[1]++;
+                    b[0]--;
+                }
+                else{
+                    cout<<"NO";
+                    return 0;
+                }
+            }
+            else{
+                if(b[1]>0 && b[0]>0){
+                    b[0]--;
+                    b[1]--;
+                    b[2]++;
+                }
+                else if(b[0]>2){
+                    b[0]-=3;
+                    b[2]++;
+                }
+                else{
+                    cout<<"NO";
+                    return 0;
+                }
+            }
+        }
+    }
+    cout<<"YES";
+
+
+}
+
+
+/*
+
+C:
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -108,7 +163,27 @@ int main()
     printf("%s", (Flag == 0) ? "YES" : "NO");
 }
 
-/*
+PY3:
 
+n=int(input())
+a=list(map(int,input().split()))
+t,f,h=0,0,0
+s=0
+for i in range(len(a)):
+    if a[i]==25:
+        t+=1
+    elif a[i]==50:
+        t-=1
+        f+=1
+    elif a[i]==100:
+        if t>0 and f>0:
+            t-=1
+            f-=1
+        else:
+            t-=3
+    if t<0 or f<0 or h<0:
+        print("NO");
+        exit()
+print("YES")
 
 */
