@@ -45,25 +45,68 @@ Output: 10000
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    string n;
+    int k;
+    cin>>n>>k;
+    for(int i=0; n[i] && k; i++)
+    {
+        if(i==0 && n[i] != '1')
+        {
+            n[i] = '1';
+            k--;
+        }
+        else if(i > 0 && n[i] != '0')
+        {
+            n[i] = '0';
+            k--;
+        }
+    }
+    cout<<n;
+}
 /*
 C:
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char str[1001];
+    int k ,count=0;
+    scanf("%s",str);
+    scanf("%d",&k);
+    for(int i=0;i<strlen(str);i++){
+        if(i==0 && str[i]!='1' && count < k){
+            str[i]='1';
+            count++;
+        }
+        else if(i>0 && str[i]!='0' && count <k){
+            str[i]='0';
+            count++;
+        }
+    }
+    printf("%s",str);
+}
+
 PY3:
 
-N = int(input())
-K = int(input())
-N_as_String = list(str(N))
-
-for i in range(len(N_as_String)):
-    if K == 0:
+N = input().strip()
+K = int(input().strip())
+st = 10 ** (len(N)-1)
+while(len(str(st))==len(N)):
+    di=0
+    F = str(st)
+    for i in range(len(N)):
+        if(N[i]!=F[i]):
+            di+=1
+    if(di<=K):
+        print(st)
         break
-    if i == 0 and N_as_String[i] != '1':
-        N_as_String[i] = '1'
-        K -= 1
-    elif i > 0 and N_as_String[i] != '0':
-        K -= 1
-        N_as_String[i] = '0'
-
-print(''.join(N_as_String))
+    st+=1
 */
