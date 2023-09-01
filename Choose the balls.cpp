@@ -32,6 +32,54 @@ Output: 12
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int a,b,c;
+    cin>>a>>b>>c;
+    int sum = a + b + c, i = 1, csum = 1 + 2 + 3;    
+    while(true)
+    {
+        int k = (i + 1) + (i + 2) + (i + 3);
+        if(k<=sum && i + 1<=a && i + 2<=b && i+3<=c)
+        {
+            csum = k;
+        }
+        else
+        {
+            cout<<csum;
+            break;
+        }
+        i++;
+    }
+}
+
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int a,b,c,min;
+    cin>>a>>b>>c;
+    if(b<a+1) a-=(a+1-b);
+    if(c<a+2) a-=(a+2-c);
+    cout<<3*a+3;
+}
+/*
+PY3:
+x,y,z=map(int,input().split())
+a,b,c=0,0,0
+a=min(x,y-1,z-2)
+b=a+1
+c=b+1
+print(a+b+c)
+
+C:
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -55,8 +103,22 @@ int main()
     printf("%d", (3 * X) + 3);
 }
 
-/*
-PY3:
+#include<stdio.h>
+#include<stdlib.h>
 
-C:
+int main()
+{
+    int x,y,z,a=0,b=0,c=0;
+    scanf("%d%d%d",&x,&y,&z);
+    b++;c+=2;
+    for(int i=0;i<x;i++)
+    {
+        if(a<x && b<y && c<z)
+        {
+            a++;b++,c++;
+        }
+    }
+    printf("%d",a+b+c);
+
+}
 */
