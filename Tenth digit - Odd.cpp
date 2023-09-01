@@ -29,6 +29,25 @@ Output: 592
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+        int n;
+        cin>>n;
+        while(n != 0)
+        {
+            int k = (n/10) % 10;
+            if(k % 2 != 0)
+            {
+                cout<<n;
+                break;
+            }
+            n /= 10;
+        }
+}
 
 /*
 PY3:
@@ -42,4 +61,19 @@ for i in range(len(N) - 2, -1, -1):
 
 print(N[:Index + 2])
 
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    while(((n/10) % 10) % 2 != 1)
+    {
+        n /= 10;
+    }
+    printf("%d", n);
+}
 */
