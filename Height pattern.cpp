@@ -37,6 +37,44 @@ Output:
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int a[n], m = 0;
+    
+    for(auto & x:a)
+    {
+        cin>>x;
+        m = max(m, x);
+    }
+    
+    char mat[m][n];
+    memset(mat, '-', sizeof(mat));
+    
+    for(int i=0; i<n; i++)
+    {
+        int c = a[i], j = m - 1;
+        while(c--)
+        {
+            mat[j][i] = '#';
+            j--;
+        }
+    }
+    
+    for(int i=0; i<m; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+           cout<<mat[i][j]<<' ';
+        }
+        cout<<endl;
+    }
+}
 
 /*
 C:
@@ -76,4 +114,13 @@ int main()
 }
 
 PY3:
+n = int(input())
+l = list(map(int,input().strip().split()))
+for i in range(max(l)):
+    for j in range(len(l)):
+        if max(l)-i<=l[j]:
+            print("#",end=" ")
+        else:
+            print("-",end=" ")
+    print()
 */
