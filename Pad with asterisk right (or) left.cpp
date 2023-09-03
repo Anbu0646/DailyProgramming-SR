@@ -83,8 +83,37 @@ int main(int argc, char** argv)
     }
 
 
-
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+  char a[1000], b[1000];
+  scanf("%s %s", &a, &b);
+  int n = strlen(a), m = strlen(b);
+  printf("%s", a);
+  if(m <= n)
+  {
+      printf("\n");
+  }
+  for(int i=0; i<abs(n - m); i++)
+  {
+      printf("*");
+  }
+  if(m>n)
+    printf("\n");
+    printf("%s", b);
+}
 
+PY3:
+s1=input().strip()
+s2=input().strip()
+if len(s1)<len(s2):
+    print(s1+'*'*(len(s2)-len(s1)))
+    print(s2)
+else:
+    print(s1)
+    print('*'*(len(s1)-len(s2))+s2)
 */
