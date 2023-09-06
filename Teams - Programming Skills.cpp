@@ -52,9 +52,128 @@ Output: 60
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+  int n;
+  cin>>n;
+  int a[n];
+  for(int &i:a) cin>>i;
+  sort(a, a+n);
+  int ans = 0;
+  for(int i=0; i<n; i += 2)
+  {
+      ans += abs(a[i] - a[i + 1]);
+  }
+  cout<<ans;
+}
+
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int size, sum = 0;
+    cin>>size;
+    int arr[size];
+    
+    for(int i=0; i<size; i++)
+    {
+        cin>>arr[i];
+    }
+    
+    sort(arr, arr+size);
+    
+    for(int i=0; i<size; i++)
+    {
+        sum += arr[i + 1] - arr[i];
+        i++;
+        
+    }
+    cout<<sum;
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, su = 0;
+    scanf("%d", &n);
+    int a[n];
+    
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    
+    for(int i=0; i < n - 1; i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(a[i] > a[j])
+            {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    
+    for(int i = 0; i < n - 1; i += 2)
+    {
+        su += (a[i + 1] - a[i]);
+    }
+    
+    printf("%d", su);
+}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int arr[N];
+    
+    for(int i=0; i < N; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    for(int i=0; i<N; i++)
+    {
+        for(int j=i + 1; j<N; j++)
+        {
+            if(arr[i] < arr[j])
+            {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    int D = 0;
+    for(int i=0; i < N; i += 2)
+    {
+        if(arr[i] != arr[i + 1])
+        {
+            D += (arr[i] - arr[i + 1]);
+        }
+    }
+    printf("%d", D);
+}
+
 PY3:
 N = int(input())
 Arr = list(map(int, input().split()))
