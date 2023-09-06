@@ -44,8 +44,173 @@ Output: -1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+void small(int n, int x, int ar[])
+{
+    int c = 100000000000000000, l = 0;
+    for(int i=0; i<n; i++)
+    {
+        string k = to_string(ar[i]);
+        if(k.length() == x)
+        {
+            l = 1;
+            if(ar[i] <= c)   
+               c = ar[i];
+        }
+    }
+    
+    if (l)
+        cout<<c;
+    else
+        cout<<-1;
+}
+
+int main(int argc, char** argv)
+{
+    int n, x;
+    cin>>n>>x;
+    int ar[n];
+    for(int i=0; i<n; i++)    
+        cin>>ar[i];
+    small(n, x, ar);
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+
+int nod(int n)
+{
+    int x = 0;
+    while(n != 0)
+    {
+        x++;
+        n /= 10;
+    }
+    return x;
+}
+
+int main()
+{
+    int n, k, l = INT_MAX;
+    scanf("%d %d", &n, &k);
+    int a[n], i;
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &a[i]);
+        if(nod(a[i]) == k)
+        {
+            if(a[i] < l)
+                l = a[i];
+        }
+    }
+    if(l < INT_MAX)
+        printf("%d", l);
+    else
+        printf("-1");
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+  int N, K;
+  scanf("%d %d", &N, &K);
+  int s = -1;
+  for(int i=0; i<N; i++)
+  {
+      int num;
+      scanf("%d", &num);
+      if(num >= pow(10, K - 1) && num < pow(10, K))
+      {
+          if(s == -1 || num < s)
+          {
+              s = num;
+          }
+      }
+  }
+  printf("%d\n", s);
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int N, K, f = 0;
+    scanf("%d %d", &N, &K);
+    int arr[N], min = pow(10, K) + 1;
+    for(int i=0; i < N; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    for(int i=0; i<N; i++)
+    {
+        int D = arr[i], cnt = 0;
+        while(D != 0)
+        {
+            cnt++;
+            D /= 10;
+        }
+        if(cnt == K)
+        {
+            if(arr[i] < min)
+            {
+                min = arr[i];
+                f = 1;
+            }
+        }
+    }
+    if(f == 0)    
+    {
+        printf("-1");
+        exit(0);
+    }
+    printf("%d", min);
+}
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int len(int n)
+{
+    int res  =0;
+    for(res = 0; n!=0; n/=10, res++);
+    return res;
+}
+
+int main()
+{
+    int n, k;
+    scanf("%d %d", &n, &k);
+    int arr[n];
+    int small = -1;
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+        if(len(arr[i]) == k)
+        {
+            if(small == -1)
+            {
+                small = arr[i];
+            }
+            else if(arr[i] < small)
+            {
+                small = arr[i];
+            }
+        }
+    }
+    printf("%d",small);
+}
+
 PY3:
 N, K = map(int, input().split())
 Arr = list(map(str, input().split()))
