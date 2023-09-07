@@ -50,7 +50,47 @@ Output: 4 3 2 1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+int isbig(int a,int b)
+{
+    if(a>b)return 1;
+    return 0;
+}
 
+
+int main(int argc, char** argv)
+{
+    int n;
+    std::cin>>n;
+
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];//b[i]=a[i];
+    }
+    
+    int min=999999,z=0;;
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i;j<n;j++)
+        {
+            if(isbig(a[j],a[i]))
+            {
+                if(a[j]<min)
+                min=a[j];
+            }
+        }
+    
+    if(min==999999)
+         cout<<a[i]<<" ";
+    else
+         cout<<min<<" ";
+    min = 999999;
+    }
+
+}
 
 /*
 PY3:
@@ -66,4 +106,39 @@ for i in range(0, N):
             break
     else:
         print(Arr[i], end = " ")
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int b[n];
+    
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d", &b[i]);
+    }
+    
+    for(int i=0; i<n; i++)
+    {
+        int m = 1000000, k = i;
+        for(int j=i + 1; j<n; j++)
+        {
+            if(b[j] - b[i] > 0 && b[j] - b[i] < m)
+            {
+                m = b[j] - b[i];
+                k = j;
+            }
+        }
+        b[i] = b[k];
+    }
+    
+    for(int i=0; i<n; i++)
+    {
+        printf("%d ", b[i]);
+    }
+}
 */
