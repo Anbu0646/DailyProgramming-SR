@@ -53,8 +53,87 @@ Output: 1000
 SOLUTION:
 */
 
+0 0 1458
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+int n;
+cin>>n;
+int mcnt = 0;
+string ans = "";
+for(int i=0; i<n; i++)
+{
+    string s;
+    cin>>s;
+    int acnt = 0, bcnt = 0;
+    string z1 = "", z2 = "";
+    for(int j=0; j<s.length(); j++)
+    {
+        if(isalpha(s[j]))
+        {
+            acnt++;
+            z1 += s[j];
+        }
+        else
+        {
+            bcnt++;
+            z2 += s[j];
+        }
+    }
+    if(acnt > bcnt && acnt > mcnt)
+    {
+        mcnt = acnt;
+        ans = z1;
+    }
+    else if(bcnt > acnt && bcnt > mcnt)
+        {
+            mcnt = bcnt;
+            ans = z2;
+        }
+    }
+    cout<<ans;
+}
+
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    int n,m=-1;
+    scanf("%d",&n);
+    char s[101],cc[101];
+    for(int i=0; i<n; i++){
+        scanf("%s",&s);
+        char aa[101],dd[101];
+        int a=0, d=0;
+        for(int j=0; s[j]; j++){
+            if((s[j]>='A' && s[j]<='Z') || (s[j]>='a' && s[j]<='z')) aa[a++]=s[j];
+            else dd[d++]=s[j];
+        }
+        aa[a]='\0';
+        dd[d]='\0';
+        if(a>=d){
+            if(a>m){
+                m=a;
+                strcpy(cc,aa);
+            }
+        }
+        else{
+            if(d>m){
+                m=d;
+                strcpy(cc,dd);
+            }
+        }
+    }
+    printf("%s",cc);
+}
+
 PY3:
 N = int(input())
 Modified_String = []
