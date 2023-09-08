@@ -50,8 +50,22 @@ Output: ANYONE
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
-
+int main(int argc, char** argv)
+{
+    int tri, stu;
+    cin>>tri>>stu;
+    int a = min(tri/2, stu), b = min(tri, stu/2);
+    if (a>b)
+        cout<<"2";
+    else if(b>a)
+        cout<<"1";
+    else
+        cout<<"ANYONE";
+}
 
 /*
 C:
@@ -75,4 +89,38 @@ int main()
         printf("ANYONE");
 }
 
+
+PY3:
+m,n=map(int,input().split())
+if n==1:
+    print(2)
+    exit()
+if m==1:
+    print(1)
+    exit()
+x,y=m,n
+c1=0
+c2=0
+while True:
+    m-=1
+    n-=2
+    if m==0 or n==0:
+        break
+    if n==1:
+        break
+    c1+=1
+while True:
+    x-=2
+    y-=1
+    if x==0 or y==0:
+        break
+    if x==1:
+        break
+    c2+=1
+if c1>c2:
+    print(1)
+elif c1==c2:
+    print("ANYONE")
+else:
+    print(2)
 */
