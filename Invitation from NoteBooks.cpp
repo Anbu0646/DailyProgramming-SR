@@ -66,6 +66,27 @@ int main(int argc, char** argv)
 }
 
 /*
+PY3:
+n, k = map(int,input().split())
+b = n * 2
+o = n * 5
+bn = (b + k - 1) // k
+on=(o + k - 1) // k
+t = bn + on
+print(t)
 
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,k;
+    scanf("%d %d", &n, &k);
+    int o = n * 5, b = n * 2;
+    int on = (o + k - 1) / k, bn = (b + k - 1) / k;
+    printf("%d", on + bn);
+    return 0;
+}
 
 */
