@@ -58,27 +58,73 @@ Output: 2
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n, k;
+    cin>>n>>k;
+    int a[n], count = 0;
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+        a[i] += k;
+        if(a[i] <= 5)
+            count++;
+    }
+    cout<<count/3;
+}
 
 /*
 PY3:
-N, K = map(int, input().split())
-Arr = list(map(int, input().split()))
+n, m = map(int, input().split()) 
+l = list(map(int, input().split()))
+a=[x for x in l if 5 - m >= x]
+print(len(a)//3
 
-Teams = []
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
-for i in range(N):
-    if Arr[i] + K <= 5:
-        Teams.append(Arr[i])
-        
-Teams.sort()
-
-if len(Teams) < 3:
-    print(0)
-else:
-    Team = 0
-    for i in range(2, len(Teams), 3):
-        Team += 1
-    print(Team)
-
+int main()
+{
+    int n, k, x, max = 0, j;
+    scanf("%d %d", &n, &k);
+    int a[n], i = 0;
+    for(int j=0; j<n; j++)
+    {
+        scanf("%d ", &x);
+        if(x < 5)
+        {
+            a[i] = x;
+            if(max < x)
+            max = x;
+            i++;
+        }
+    }
+    if(i < 3)
+    printf("0");
+    else 
+    {
+        for(j=0; j<i; j++)
+        {
+            for(int k=j + 1; k<i; k++)
+            {
+                if(a[j] > a[k])
+                {
+                    int temp = a[j];
+                    a[j] = a[k];
+                    a[k] = temp;
+                }
+            }
+            if(a[j] + k > 5)
+            {
+                break;
+            }
+        }
+        printf("%d", (j / 3));
+    }
+}
 */
