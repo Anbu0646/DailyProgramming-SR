@@ -36,6 +36,49 @@ Output: -1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s, ans;
+    cin>>s;
+    bool f = false;
+    vector<int> arr;
+    for(char &c:s)
+    {
+        int x = c - '0';
+        if(!(x & 1))
+        {
+            arr.push_back(x);
+            f = true;
+        }
+    }
+    if(!f)
+    {
+        cout<<"-1";
+        return 0;
+    }
+    sort(arr.begin(), arr.end(), greater<int>());
+    for(int i:arr)
+    {
+        cout<<i;
+    }
+}
+
+/*
+PY3:
+n=int(input())
+l=[int(i) for i in str(n) if int(i)%2==0]
+l=sorted(l)[::-1]
+if len(l)==0:
+    print('-1')
+else:    
+    for j in l:
+        print(j,end='')
+
+C:
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -79,8 +122,41 @@ int main()
     printf("%d", Largest);
 }
 
-/*
 
 
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int n, a[10000000], k = 0;
+    scanf("%d", &n);
+    while(n > 0)
+    {
+        int d = n % 10;
+        if(d % 2 == 0)
+        {
+            a[k++] = d;
+        }
+        n /= 10;
+    }
+    if(k ==0)
+    {
+        printf("-1");
+        return 0;
+    }
+    for(int i=0; i<k; i++)
+    {
+        for(int j=i + 1; j<k; j++)
+        {
+            if(a[i] < a[j])
+            {
+                int t = a[i];
+                a[i] = a[j];
+                a[j] = t;
+            }
+        }
+        printf("%d", a[i]);
+    }
+}
 */
