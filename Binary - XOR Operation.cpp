@@ -34,7 +34,21 @@ Output: 0100
 SOLUTION:
 */
 
+#include <iostream>
+#include <string>
 
+int main() 
+{
+    string x, y;
+    cin >>x>> y;
+    
+    for (size_t i = 0; i < x.length(); ++i) 
+    {
+        cout << (x[i] - '0') ^ (y[i] - '0');
+    }
+    
+    return 0;
+}
 
 /*
 PY3:
@@ -47,4 +61,37 @@ for i in range(len(X)):
     else:
         XOR += "1"
 print(XOR)
+
+
+
+x=input().strip()
+y=input().strip()
+for i in range(len(x)):print(int(x[i])^int(y[i]),end="")
+
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+void XOR(char c1, char c2)
+{
+    if(c1 == c2)
+    {
+        printf("0");
+    }
+    else
+    {
+        printf("1");
+    }
+}
+
+int main()
+{
+    char s1[1001], s2[1001];
+    scanf("%s\n%s", s1, s2);
+    for(int i=0; i<strlen(s2); i++)
+    {
+        XOR(s1[i], s2[i]);
+    }
+}
 */
