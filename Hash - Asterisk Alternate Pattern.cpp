@@ -55,5 +55,43 @@ int main(int argc, char** argv)
 
 /*
 
+PY3:
+n = int(input())
+if n % 2 == 0:
+    s = '#*'
+    e = '*#'
+    for i in range(n):
+        if i % 2 == 0:print(s * (n // 2))
+        else:print(e * (n // 2))
+else:
+    s = ('*#')
+    e = ('#*')
+    for i in range(n):
+        print(s * (n // 2) + '*' if i % 2 == 1 else e * (n // 2) + '#')
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    for(int i=1; i<=a; i++)
+    {
+        for(int j=1; j<=a; j++)
+        {
+            if(j % 2 != 0 && i % 2 != 0 || j % 2 == 0 && i % 2 == 0)
+            {
+                printf("#");
+            }
+            else
+            {
+                printf("*");
+            }
+        }
+        printf("\n");
+    }
+}
 
 */
