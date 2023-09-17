@@ -70,6 +70,16 @@ int main(int argc, char** argv)
 }
 
 /*
-
-
+PY3:
+a, b = map(int, input().split())
+n = []
+for v in range(a, b + 1):
+    odd = True
+    for r in str(v):
+        if int(r) % 2 == 0:
+            odd = False
+            break
+    if odd: n.append(v)
+if len(n) == 0: print(-1)
+else: print(*n)
 */
