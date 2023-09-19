@@ -49,3 +49,68 @@ power
 
 SOLUTION:
 */
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    getline(cin, s);
+    string k = "";
+    vector<string> nums;
+    
+    for(int i=0; i<s.size(); i++)
+    {
+        if(s[i] == ' ')
+        {
+            nums.push_back(k);
+            k = "";
+        }
+        else
+        {
+            k += s[i];
+        }
+    }
+    nums.push_back(k);
+
+    for(int i=0; i<nums.size(); i++)
+    {
+        string y = "";
+        for(int j=0; j < nums[i].size(); j++)
+        {
+            y += nums[i][j];
+            cout<<y<<endl;
+        }
+    }
+}
+
+/*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1000];
+    while(scanf("%s", s) > 0)
+    {
+        for(int i=0; i<strlen(s); i++)
+        {
+            for(int j=0; j<=i; j++)
+            {
+                printf("%c", s[j]);
+            }
+            printf("\n");
+        }
+    }
+
+}
+
+PY3:
+a = input().split()
+for w in a:
+    for i in range(len(w)):
+        print(w[:i + 1])
+*/
