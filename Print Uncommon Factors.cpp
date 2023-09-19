@@ -31,8 +31,74 @@ Output: -1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+int fact(int z, int x, int y)
+{
+    int s = 0;
+    if(x % z == 0)
+    {
+        s++;
+    }
+    if(y % z == 0)
+    {
+        s++;
+    }
+    return s;
+}
+
+int main(int argc, char** argv)
+{
+    int x, y;
+    
+    cin>>x>>y;
+    
+    int k = max(x, y);
+
+    vector<int> nums;
+    
+    int a;
+    
+    for(int i=1; i<=k; i++)
+    {
+      int j = fact(i, x, y);
+      if(j == 1) nums.push_back(i);
+    }
+
+    sort(nums.rbegin(), nums.rend());
+    
+    for(int i=0; i<nums.size(); i++)
+    {
+        cout<<nums[i]<<" ";
+    }
+    
+    if(nums.empty()) 
+        cout<<"-1";
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x, y, c = 0;
+    scanf("%d %d", &x, &y);
+    for(int i = (x >= y) ? x : y; i >=1; i--)
+    {
+        if((x % i == 0 && y % i != 0) || (x % i != 0 && y % i == 0))
+        {
+            printf("%d ", i);
+            c++;
+        }
+    }
+    if(c == 0)
+        printf("-1");
+}
+
+
 PY3:
 X, Y = map(int, input().split())
 Xfac = [i for i in range(1, X + 1) if X % i == 0]
