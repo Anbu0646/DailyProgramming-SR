@@ -29,3 +29,86 @@ Output: skillrack
 
 SOLUTION:
 */
+
+#include <iostream>
+#include <unordered_map>
+
+bool isVowel(char c) 
+{
+    c = std::tolower(c); 
+    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+}
+
+int main() 
+{
+    string s;
+    cin >> s;
+    
+    unordered_map<char, int> charCount;
+
+    for (char c : s) 
+    {
+        charCount[c]++;
+    }
+
+    for (char c : s) 
+    {
+        if (!isVowel(c) || charCount[c] > 1) 
+        {
+            cout << c;
+        }
+    }
+
+    return 0;
+}
+
+/*
+PY3:
+a=input().strip()
+v="aeiouAEIOU"
+vc={}
+for i in a:
+    if i in v:
+        if i not in vc:
+            vc[i]=1
+        else:
+            vc[i]+=1
+for i in a:
+    if i not in v or vc[i]==1:
+        print(i,end="")
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int isvowel(char b)
+{
+    return b == 'a' || b == 'e' || b == 'i' || b == 'o' || b == 'u';
+}
+
+int main()
+{
+    char b[10001];
+    scanf("%s", b);
+    int l = strlen(b) - 1;
+    int r[26] = {0};
+    for(int i=0; i<=l; i++)
+    {
+        if(isvowel(b[i]))
+        {
+            r[b[i] - 97]++;
+        }
+    }
+    for(int i=0; i<=l; i++)
+    {
+        if(r[b[i] - 97] > 1)
+        {
+            continue;
+        }
+        else
+        {
+            printf("%c", b[i]);
+        }
+    }
+}  
+*/
