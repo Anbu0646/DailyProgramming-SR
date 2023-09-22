@@ -31,7 +31,41 @@ Output:
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    long long int n;
+    cin>>n;
+    int c = 0;
+    long long int k=n;
+    
+    while(k>0)  
+    {
+        c++;
+        k/=10;
+    }
+    
+    cout<<"+";
+     
+    for(int i=0;i<c;i++)
+    {
+        cout<<"-";
+    }
+  
+    cout<<"+";
+    cout<<"\n|"<<n<<"|";
+    cout<<"\n+";
+    
+    for(int i=0; i<c; i++)
+    {
+        cout<<"-";
+    }
+    cout<<"+";
+
+}
 
 /*
 PY3:
@@ -41,4 +75,41 @@ Pattern_1 = '+' + '-' * Len + '+'
 print(Pattern_1)
 print("|%d|"%N)
 print(Pattern_1)
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    long int n;
+    int c = 0, i;
+    scanf("%ld", &n);
+    
+    long int m = n;
+    
+    while(m > 0)
+    {
+        c++;
+        m/=10;
+    }
+    
+    printf("+");
+    
+    for(i=0; i<c; i++)
+    {
+        printf("-");
+    }
+    
+    printf("+\n");
+    printf("|%ld|\n", n);
+    printf("+");
+    
+    for(i=0; i<c; i++)
+    {
+        printf("-");
+    }
+    
+    printf("+");
+}
 */
