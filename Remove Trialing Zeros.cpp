@@ -44,7 +44,52 @@ Output: 1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int a[n], k, p;
+    
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=0; i<n; i++)
+    {
+        k = a[i];
+        while(k > 0)
+        {
+            p = k % 10;
+            if(p == 0)
+            {
+                k /= 10;
+                a[i] = k;
+            }
+            else
+            {
+                k = 0;
+            }
+        
+        }
+    }
+    
+    int s = a[0];
+    
+    for(int i=1; i<n; i++)
+    {
+        if(a[i] < s)
+        {
+            s = a[i];
+        }
+    
+    }
+    
+    cout<<s;
+}
 
 /*
 PY3:
@@ -55,4 +100,30 @@ for i in Arr:
     j = str(i).rstrip('0')
     Arr_1.append(int(j))
 print(min(Arr_1))
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, x, min = 100000001;
+    scanf("%d ", &n);
+    for(int i=0; i<n; i++)
+    {
+        scanf("%d ", &x);
+        if(x == 10)
+        {
+            printf("1");
+            exit(0);
+        }
+        while((x % 10) == 0)
+        {
+            x /= 10;
+        }
+        if(min > x)
+        min = x;
+    }
+    printf("%d", min);
+}
 */
