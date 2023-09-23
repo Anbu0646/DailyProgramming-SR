@@ -31,3 +31,58 @@ Output: 24
 
 SOLUTION:
 */
+
+#include <iostream>
+
+long long int gcd(long long int a, long long int b) 
+{
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int main() 
+{
+    long long int x, y, a = 1, b = 1;
+    cin >> x >> y;
+
+    for (long long int i = 1; i <= x; i++) 
+    {
+        a *= i;
+    }
+
+    for (long long int i = 1; i <= y; i++) 
+    {
+        b *= i;
+    }
+
+    cout << gcd(a, b) << endl;
+
+    return 0;
+}
+
+
+/*
+PY3:
+import math
+a, b = map(int,input().split())
+m = math.factorial(a)
+n = math.factorial(b)
+print(math.gcd(m,n))
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+long long int gcd(long long int a, long long int b)
+{
+    return b==0 ? a : gcd(b, a % b);
+}
+int main()
+{
+    long long int x, y, a = 1, b = 1;
+    scanf("%lld %lld", &x, &y);
+    for(long long int i=1; i<=x; i++) a *= i;
+    for(long long int i=1; i<=y; i++) b *= i;
+    printf("%lld", gcd(a, b));
+    return 0;
+}
+*/
