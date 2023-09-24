@@ -50,3 +50,26 @@ Output: -1
 
 SOLUTION:
 */
+
+
+
+
+/*
+PY3:
+String = input().strip()
+Ch, X = map(str, input().split())
+X = int(X)
+Count = 0
+Modified_String = ""
+for i in String:
+    if i == Ch:
+        Count += 1
+        if Count > X:
+            Modified_String += i
+    else:
+        Modified_String += i
+if len(Modified_String) == 0:
+    print(-1)
+else:
+    print(Modified_String)
+*/
