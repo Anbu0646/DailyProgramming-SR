@@ -61,6 +61,42 @@ int main(int argc, char** argv)
 }
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+  int n;
+  scanf("%d", &n);
+  int s = 0, a = 0;
+  for(int i = n + 1; i >= 1; i++)
+  {
+      s = 0;
+      if(i % 3 == 0)
+      {
+          a = i;
+          while(i > 0)
+          {
+              int r = i % 10;
+              s = s + r;
+              i = i / 10;
+          }
+          if(s % 3 == 0)
+          {
+              printf("%d", a);
+              return 0;
+          }
+      }
+  }
+}
 
+PY3:
+N = int(input())
+
+while True:
+    N += 1
+    if N % 3 == 0 and sum(int(digit) for digit in str(N)) % 3 == 0:
+        print(N)
+        break
 */
