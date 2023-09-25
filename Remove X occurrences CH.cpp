@@ -51,7 +51,28 @@ Output: -1
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    string s, out = "";
+    int x;
+    char c;
+    cin>>s>>c>>x;
+    for(char d:s)
+    {
+        if(x > 0)
+        {
+            if(c==d) x--;
+            else out+=d;
+        }
+        else out+=d;
+    }
+    if(out.size() == 0) cout<<-1;
+    else cout<<out;
+}
 
 
 /*
@@ -72,4 +93,42 @@ if len(Modified_String) == 0:
     print(-1)
 else:
     print(Modified_String)
+
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1000];
+    scanf("%s", s);
+    int a = strlen(s);
+    char c;
+    int n, d = 0;
+    scanf(" %c %d", &c, &n);
+    for(int i=0; i < a; i++)
+    {
+        if(s[i] == c)
+        {
+            s[i] = '<';
+            d++;
+        }
+        if(d == n)
+        {
+            break;
+        }
+    }
+    if(d == a)
+    {
+        printf("-1");
+    }
+    for(int i=0; i < a; i++)
+    {
+        if(s[i] != '<')
+        {
+            printf("%c", s[i]);
+        }
+    }
+}    
 */
