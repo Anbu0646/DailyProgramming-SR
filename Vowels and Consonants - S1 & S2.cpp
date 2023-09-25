@@ -51,6 +51,36 @@ Output: NO
 SOLUTION:
 */
 
+#include <iostream>
+#include<string.h>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    char s[1001];
+    char t[1001];
+    cin>>s>>t;
+    int l = strlen(s);
+    for(int i=0; i<l; i++)
+    {
+        if(strchr("AEIOUaeiou", s[i]) == strchr("AEIOUaeiou", t[i]))
+        {
+            continue;          
+        }
+        else if(strchr("AEIOUaeiou", s[i]) && strchr("AEIOUaeiou", t[i]))
+        {
+            continue;
+        }
+        else 
+        {
+            cout<<"NO";
+            return 0;
+        }
+        
+    }
+    cout<<"YES";
+}
+
 /*
 PY3:
 S1 = input().strip()
@@ -63,4 +93,38 @@ for i in range(len(S1)):
     if S1[i] not in Vowels and S2[i] not in Vowels:
         Count_2 += 1
 print("YES" if (Count_1 + Count_2) == len(S1) else "NO")
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int vowel(char c)
+{
+    if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U')
+    {
+        return 1;
+    }
+    return 0;
+}
+int main()
+{
+    char s1[1000], s2[1000];
+    scanf("%s\n%s", s1, s2);
+    int a = strlen(s1), d = 0;
+    for(int i=0; i<a; i++)
+    {
+        if((vowel(s1[i]) == 0 && vowel(s2[i]) == 0) || (vowel(s1[i]) == 1 && vowel(s2[i]) == 1))
+        {
+            d++;
+        }
+    }
+    if(d == a)
+    {
+        printf("YES");
+    }
+    else
+    {
+        printf("NO");
+    }
+}
 */
