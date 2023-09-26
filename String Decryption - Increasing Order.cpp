@@ -55,5 +55,28 @@ int main(int argc, char** argv)
 }
 
 /*
+PY3:
+a = input().strip()
+k = 0
+for i in range(len(a)):
+    k = k + i
+    if(k < len(a)):
+        print(a[k], end = "")
 
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1000];
+    scanf("%s", s);
+    int i, a = strlen(s), m = 1;
+    for(i=0; i<a; i += m)
+    {
+        printf("%c", s[i]);
+        m += 1;
+    }
+
+}
 */
