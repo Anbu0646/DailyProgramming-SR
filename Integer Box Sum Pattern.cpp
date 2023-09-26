@@ -42,7 +42,37 @@ Output:
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+void des(int n)
+{
+    cout<<'+';
+    while(n)
+    {
+        cout<<'-';
+        n--;
+    }
+    cout<<'+'<<endl;
+}
+
+int main(int argc, char** argv)
+{
+    int x, y;
+    cin>>x>>y;
+    int z = (y - x + 1) * (x + y) / 2;
+    int k = floor(log10(z) + 1);
+    des(k);
+    while(x <= y)
+    {
+        printf("|%0*d|\n", k, x);
+        x++;
+    }
+    des(k);
+    cout<<'|'<<z<<'|'<<endl;
+    des(k);
+}
 
 /*
 PY3:
@@ -65,4 +95,48 @@ for i in range(X, Y + 1):
 print(Pattern)
 print('|' + str(Sum) + '|')
 print(Pattern)
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x, y, a = 0, c = 0, i, k;
+    scanf("%d %d", &x, &y);
+    
+    for(i=x; i<=y; i++)    
+    {
+        a = a + i;
+    }
+    
+    k = a;
+    
+    while(a > 0)
+    {
+        a = a / 10;
+        c++;
+    }
+    
+    char b[c + 2];
+    b[0] = b[c + 1] = '+';
+    
+    for(i=1; i<c + 1; i++)
+    {
+        b[i] = '-';
+    }
+    printf("%s\n", b);
+    for(i=x; i<=y; i++)
+    {
+        printf("|");
+        printf("%0*d", c, x);
+        x++;
+        printf("|");
+        printf("\n");    
+    }
+    printf("%s\n", b);
+    printf("|%d|\n", k);
+
+    printf("%s", b);
+}
 */
