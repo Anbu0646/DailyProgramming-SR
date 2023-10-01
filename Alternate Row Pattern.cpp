@@ -36,7 +36,49 @@ abcdefgh
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int r = (n % 2 != 0) ? n - 1 : n;
+    int ev = 2, od = 1;
+    for(int i=0; i<r; i++)
+    {
+        char ch = 'a';
+        if(i % 2 == 0)
+        {
+            for(int j=0; j<ev; j++)
+            {
+                cout<<ch;
+                ch++;
+            }
+            ev += 2;
+        }
+        else
+        {
+            for(int j=0; j<od; j++)
+            {
+                cout<<ch;
+                ch++;
+            }
+            od += 2;
+        }
+        cout<<endl;
+    }
+    if(n % 2 != 0)
+    {
+        char ch = 'a';
+        for(int i=0; i<=n; i++)
+        {
+            cout<<ch;
+            ch++;
+        }
+    }
+}
 
 /*
 C:
@@ -69,4 +111,16 @@ int main()
         }
     }
 }
+
+PY3:
+n = int(input()); x, y = 2, 1
+def pr(j):
+    for j in range(97, 97 + j):
+        print(chr(j),end="")
+    print()
+for i in range(n):
+    if i % 2 == 0:
+        pr(x); x += 2
+    else:
+        pr(y); y += 2
 */
