@@ -41,3 +41,42 @@ Output:
 
 SOLUTION:
 */
+
+
+
+
+/*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int main()
+{
+	char m[3]; 
+	scanf("%s", m);
+
+	int cal[4][7] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28};
+	int i, j;
+
+	for(int i = 0; i < 4; i++, printf("\n"))
+	{
+		for(int j = 0; j < 7; j++)
+		{
+			if(cal[i][j] < 10) printf("0"); 
+			printf("%d ",cal[i][j]);
+		}	
+	}
+	
+    if( strcmp(m, "JAN") == 0 || strcmp(m, "MAR") == 0 || strcmp(m, "MAY") == 0 || strcmp(m,"JUL") == 0 || strcmp(m, "AUG") == 0 || strcmp(m, "OCT") == 0 || strcmp(m, "DEC") == 0 )  
+    {
+        printf("29 30 31 -- -- -- -- ");
+    }
+    else if( strcmp(m, "APR") == 0 || strcmp(m, "JUN") == 0 || strcmp(m, "SEP") == 0 || strcmp(m,"NOV") == 0)
+    {
+        printf("29 30 -- -- -- -- --");
+    }
+    
+    return 0;
+}
+*/
