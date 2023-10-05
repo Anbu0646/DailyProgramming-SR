@@ -42,8 +42,31 @@ Output:
 SOLUTION:
 */
 
+#include <iostream>
+ 
+using namespace std;
 
-
+int main(int argc, char** argv)
+{
+    string a;
+    cin>>a;
+	
+    for(int i=1; i<=28; i++)
+    {
+        if(i < 10) cout<<0<<i<<" ";
+        else cout<<i<<" ";
+        if(i % 7 == 0) cout<<endl;
+    }
+	
+    if(a == "JAN" || a == "MAR" || a == "MAY" || a == "JUL" || a == "AUG" || a == "OCT" || a == "DEC")
+    {
+        cout<<"29 30 31 -- -- -- --";
+    }
+    else if(a != "FEB")
+    {
+        cout<<"29 30 -- -- -- -- --";
+    }
+}
 
 /*
 C:
@@ -79,4 +102,13 @@ int main()
     
     return 0;
 }
+
+PY3:
+s = input().strip()
+if s == "FEB":
+    print("01 02 03 04 05 06 07\n08 09 10 11 12 13 14\n15 16 17 18 19 20 21\n22 23 24 25 26 27 28")
+elif s == 'APR' or s == "JUN" or s == 'SEP' or s == 'NOV':
+    print("01 02 03 04 05 06 07\n08 09 10 11 12 13 14\n15 16 17 18 19 20 21\n22 23 24 25 26 27 28\n29 30 -- -- -- -- --")
+else:
+    print('01 02 03 04 05 06 07\n08 09 10 11 12 13 14\n15 16 17 18 19 20 21\n22 23 24 25 26 27 28\n29 30 31 -- -- -- --')
 */
