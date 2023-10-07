@@ -31,3 +31,34 @@ Output: 25
 
 SOLUTION:
 */
+
+
+
+
+/*
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+    int Sum = 0;
+    for(int i=1; i<=N; i++)
+    {
+        int Pow = 0;
+        for(int j=0; Pow<=i; j++)
+        {
+            Pow = pow(2, j);
+            if(Pow == i)
+            {
+                break;
+            }
+        }
+        Sum += ( (Pow == i) ? (-1 * i) : i );
+    }
+    printf("%d", Sum);
+    return 0;
+}
+*/
