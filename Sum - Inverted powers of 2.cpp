@@ -32,8 +32,35 @@ Output: 25
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int sum = 0;
+    if(n <= 0) n = abs(n);
+    for(int i=1; i<=n; i++)
+    {
+        int x = 1, num = i;
+        while(num > 1)
+        {
+            if(num % 2 != 0)
+            {
+                x = 0;
+                break;
+            }
+            num /= 2;
+        }
+        int mv = i;
+        if(x == 1) mv = -mv;
+        sum += mv;
+    }
+    cout<<sum;
 
+}
 
 /*
 C:
@@ -61,4 +88,17 @@ int main()
     printf("%d", Sum);
     return 0;
 }
+
+PY3:
+import math
+n = int(input())
+lis = []
+for i in range(1, n + 1):
+    if i == 1 : lis.append(-1)
+    elif i % 2 != 0 : lis.append(i)
+    else:
+        lot = (math.log10(i) / math.log10(2))
+        if math.ceil(lot) == math.floor(lot): lis.append(i * -1)
+        else: lis.append(i)
+print(sum(lis))
 */
