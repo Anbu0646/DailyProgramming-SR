@@ -38,6 +38,24 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+    int n, out = 0;
+    cin>>n;
+    for(int i=1; i<=n; i++)
+    {
+        if(log2(i) == (int)log2(i)) out -= i;
+        else out += i;
+    }
+    cout<<out;
+}
+
+/*
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
     int n;
     cin>>n;
     int sum = 0;
@@ -62,7 +80,6 @@ int main(int argc, char** argv)
 
 }
 
-/*
 C:
 #include<stdio.h>
 #include<stdlib.h>
