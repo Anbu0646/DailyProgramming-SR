@@ -60,6 +60,32 @@ int main()
 }
 
 /*
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    if(n>=4 and n<20) cout<<n<<"th";
+    else if(n==1 or n%10==1) cout<<n<<"st";
+    else if(n==2 or n%10==2) cout<<n<<"nd";
+    else if(n==3 or n%10==3) cout<<n<<"rd";
+    else cout<<n<<"th";
+
+}
+
+PY3:
+n = int(input())
+s = 'th'
+if n % 10 == 1 and n != 11:
+    s = 'st'
+elif n % 10 == 2 and n != 12:
+    s = 'nd'
+elif n % 10 == 3 and n != 13:
+    s = 'rd'
+print(n, s, sep = '')
 
 */
