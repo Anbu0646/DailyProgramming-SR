@@ -37,6 +37,16 @@ Output: 0
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int A, B, W;
+    cin>>A>>B>>W;
+    cout<<min(A/1, min(B/2, W/4));
+}
 
 /*
 PY3:
@@ -50,4 +60,49 @@ while X >= 1 and Y >= 2 and Z >= 4:
     Y -= 2
     X -= 1
 print(Count)
+
+X,Y,Z=map(int,input().split()) 
+print(min(X//1,Y//2,Z//4))
+
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x = 2, y = 10, z = 3, ctr = 0;
+    scanf("%d %d %d", &x, &y, &z);
+    while(1)
+    {
+        x = x - 1, y = y - 2, z = z - 4;
+        if(x >= 0 && y >= 0 && z >= 0)
+        {
+            ctr++;
+        }
+        else
+        {
+           printf("%d", ctr);
+           break;
+        }
+    }
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x, y, z;
+    scanf("%d %d %d", &x, &y, &z);
+    if(x != 0 && y != 0 && z != 0)
+    {
+        printf("%d", z/4);
+    }
+    else    
+    {
+        printf("0");
+    }
+    return 0;
+}
 */
