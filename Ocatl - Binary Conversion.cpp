@@ -31,11 +31,61 @@ Output: 1001
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    string s, res;
+    cin>>s;
+    
+    for(int i=0; i<s.length(); i++)
+    {
+        if(s[i] == '0') res += "000";
+        else if(s[i] == '1') res += "001";
+        else if(s[i] == '2') res += "010";
+        else if(s[i] == '3') res += "011";
+        else if(s[i] == '4') res += "100";
+        else if(s[i] == '5') res += "101";
+        else if(s[i] == '6') res += "110";
+        else res += "111";
+    }
+    long int k = stol(res);
+    cout<<k;
+
+}
 
 /*
 PY3:
 N = input()
 N = int(N, 8)
 print(bin(N)[2:])
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int x = 0, c = 0;
+    while(n > 0)
+    {
+        x = x + ((n % 10) * pow(8, c));
+        c++;
+        n /= 10;
+    }
+    int a[30], i = 0;
+    while(x > 0)
+    {
+        a[i] = x % 2;
+        x /= 2;
+        i++;
+    }
+    for(int j = i - 1; j>=0; j--)
+    printf("%d", a[j]);
+    
+}
 */
