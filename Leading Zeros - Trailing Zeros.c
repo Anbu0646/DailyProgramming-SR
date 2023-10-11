@@ -35,8 +35,29 @@ Output: 1019000
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
 
-
+int main()
+{
+char str[51];
+scanf("%s", str);
+int len = strlen(str), flg = 0, cnt = 0;
+for(int i=0; i < strlen(str); i++)
+{
+    if(flg == 0 && str[i] == '0')
+    {
+        cnt++;
+    }
+    else
+    {
+        printf("%c", str[i]);
+        flg = 1;
+    }
+}
+for(int i=0; i < cnt; i++)
+  printf("0");
+}
 
 /*
 PY3:
@@ -45,4 +66,39 @@ T = int(N)
 Len = len(N) - len(str(T))
 print(T, end="")
 print('0' * Len)
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char ch[20];
+    scanf("%s", ch);
+    int l = strlen(ch), f = 0;
+    int zero[20], z = 0;
+    for(int i=0; i < l; i++)
+    {
+        if(ch[i] == '0')
+        {
+            zero[z++] = ch[i] - 48;
+        }
+        if(ch[i] != '0')
+        {
+            break;
+        }
+    }
+    for(int i=0; i < l; i++)
+    {
+        if(ch[i] != '0')
+        {
+            f = 1;
+        }
+        if(f == 1)
+        {
+            printf("%c", ch[i]);
+        }
+    }
+    for(int i=0; i < z; i++)
+    printf("%d", zero[i]);
+}
 */
