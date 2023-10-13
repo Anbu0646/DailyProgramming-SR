@@ -24,7 +24,41 @@ Output: -1
 SOLUTION:
 */
 
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int a, b, f = 0;
+    scanf("%d%d", &a, &b);
+    for(int i = a; i <= b; i++)
+    {
+        int n = i, num = 0;
+        while(n != 0)
+        {
+            int r = n % 10;
+            num = num * 10 + r;
+            n /= 10;
+        }
+        if(num == i)
+        {
+            printf("%d ", i);
+            f = 1;
+        }
+    }
+    if(f == 0)
+    printf("-1");
+}
 
 /*
-
+PY3:
+f = True
+x, y = map(int, input().strip().split())
+for i in range(x, y + 1):
+    t = str(i)
+    if t == t[::-1]:
+        print(t, end = " ")
+        f = False
+if f:
+    print("-1")
 */
