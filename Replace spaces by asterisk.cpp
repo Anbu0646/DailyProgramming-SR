@@ -30,6 +30,29 @@ Output: ofthepeoplebythepeopleforthepeople********
 SOLUTION:
 */
 
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char ch[1000];
+    scanf("%[^\n]", ch);
+    int count = 0;
+    for(int i=0; i < strlen(ch); i++)
+    {
+        if(ch[i] == ' ')
+        {
+            count++;
+        }
+        else
+        {
+            printf("%c", ch[i]);
+        }
+    }
+    for(int i=1; i<=count; i++)
+    printf("*");
+}
 
 /*
 PY3:
