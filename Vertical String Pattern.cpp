@@ -45,8 +45,75 @@ cst*
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n, maxx = 0;
+    cin>>n;
+    vector<string> v1(n, "");
+    
+    for(int i=0; i<n; i++) 
+    {
+        cin>>v1[i];
+        int si = v1[i].size();
+        maxx = max(maxx, si);
+    }
+  
+    for(int i=0; i<maxx; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(i < v1[j].size()) cout<<v1[j][i];
+            else cout<<"*";
+        }
+        cout<<endl;
+    }
+}
 
 /*
+c:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int n, i = 0, max = 0;
+    scanf("%d ", &n);
+    char s[n][101];
+    int l[n];
+    while(scanf("%s ", s[i]) > 0)
+    {
+        l[i] = strlen(s[i]);
+        if(max < l[i])
+        max = l[i];
+        i++;
+    }
+    for(int i=0; i<max; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            if(l[j] > 0)
+            printf("%c", s[j][i]);
+            else 
+            printf("*");
+            l[j]--;
+        }
+        printf("\n");
+    }
+}
+
+PY3:
+n = int(input())
+l = list(map(str, input().strip().split()))
+l1 = sorted(l, key = len)
+for i in range(len(l1[-1])):
+    for j in range(n):
+        if i < len(l[j]):
+            print(l[j][i], end = '')
+        else:
+            print('*', end = '')
+    print()
 */
