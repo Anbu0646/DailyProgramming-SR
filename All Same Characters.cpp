@@ -24,7 +24,18 @@ Output: NO
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    if(count(s.begin(), s.end(), s[0]) == s.length())
+    cout<<"YES";
+    else cout<<"NO";
+}
 
 /*
 C:
@@ -48,4 +59,8 @@ int main()
     
     printf("%s", (Flag == 1) ? "YES" : "NO");
 }
+
+PY3:
+s = input()
+print('YES' if all(v == s[0] for v in s) else 'NO')
 */
