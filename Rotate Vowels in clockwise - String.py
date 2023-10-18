@@ -29,7 +29,24 @@ Output: uAEIo
 SOLUTION:
 '''
 
+String = input().strip()
+Vow = "aAeEiIoOuU"
+String0 = ""
 
+for i in String:
+    if i in Vow:
+        String0 += i
+
+Len = len(String0) - 1
+Modi = String[Len:] + String[:Len]
+Count = 0
+
+for j in String:
+    if j in Vow:
+        print(Modi[Count], end="")
+        Count += 1
+    else:
+        print(j, end="")
 
 '''
 
