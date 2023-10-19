@@ -28,7 +28,18 @@ Output: uAEIo
 
 SOLUTION:
 '''
+s = input().strip()
+v = [i for i in s if i in "aeiouAEIOU"]
+k = v[len(v) - 1:] + v[:len(v) - 1]
+c = 0
 
+for i in s:
+    if i not in "aeiouAEIOU":
+        print(i, end = "")
+    else:
+        print(k[c], end = "")
+        c += 1
+'''        
 String = input().strip()
 Vow = "aAeEiIoOuU"
 String0 = ""
@@ -48,7 +59,94 @@ for j in String:
     else:
         print(j, end="")
 
-'''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int isvow(char c)
+{
+    c = tolower(c);
+    if(c == 'a'|| c == 'e'|| c == 'i'|| c == 'o'|| c ==' u')
+    {
+        return 1;
+    }
+    return 0;
+}
 
+int main()
+{
+    char s[10001];
+    scanf("%s", s);
+    int l = strlen(s);
+    int  a[1001], c = 0;
+    
+    for(int i=0; i<l; i++)
+    {
+        if(isvow(s[i]))
+        {
+            a[c++] = i;
+        }
+    }
+    
+    if(c > 0)
+    {
+        char b=s[a[c-1]];
+        for(int i=0; i<c; i++)
+        {
+            char t = s[a[i]];
+            s[a[i]] = b;
+            b = t;        
+        }
+    }
+    printf("%s", s);
+}
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string a;
+    char c[100001];
+    int k = 0;
+    cin>>a;
+    for(int i = 0; a[i] != '\0'; i++)
+    {
+        char b = tolower(a[i]);
+        if(b == 'a' || b == 'e'|| b == 'i' || b == 'o' || b == 'u' || b == 'A' || b == 'E' || b == 'I' || b == 'O' || b == 'U')
+        {
+            c[k++] = a[i];
+        }
+    }
+    
+    int j = 0;
+    
+    for(j = 0; a[j] != '\0'; j++)
+    {
+        if(c[0] == a[j])
+        {
+            cout<<c[k - 1];
+            break;
+        }
+        cout<<a[j];
+    }
+    
+    int f = 1, s = 0;
+    
+    for(int i = j + 1; a[i] != '\0'; i++)
+    {
+        if(c[f] == a[i])
+        {
+            cout<<c[s];
+            s++;
+            f++;
+        }
+        else
+        {
+            cout<<a[i];
+        }
+    }
+}
 '''
