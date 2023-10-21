@@ -27,9 +27,58 @@ Output: 15
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int arr[100];  
+    int k = 0;
+
+    while(cin)
+    {
+        cin>>arr[k++];
+    }
+
+    int min = arr[0], max = arr[0];
+
+    for(int i=0; i < k - 1; i++)
+    {
+        if(min > arr[i])
+            min = arr[i];
+        if(max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+
+    cout<<min*max;
 
 /*
 PY3:
 Arr = list(map(int, input().split()))
 print(min(Arr) * max(Arr))
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int val;
+    int min = 10001, max = 0;
+    while(scanf("%d ", &val) >= 1)
+    {
+        if(val < min)
+        {
+            min = val;
+        }
+        if(val > max)
+        {
+            max = val;
+        }
+    }  
+    printf("%d", min * max);
+}
 */
