@@ -39,7 +39,31 @@ Output: 60
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int k, zeros = 0;
+    long d = 0;
+    while(n--)
+    {
+        cin>>k;
+        if(k == 0)
+        {
+            zeros++;
+        }
+        else
+        {
+            d = d * 2 + k;
+        }
+    }
+    cout<<(d<<zeros);
+
+}
 
 /*
 PY3:
@@ -55,4 +79,26 @@ for i in Arr:
         Zeros += i
 Sum = Ones + Zeros
 print(int(Sum, 2))
+
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+        int N, val;
+        scanf("%d", &N);
+        long sum = 0, i = N - 1;
+        while(N != 0)
+        {
+            scanf("%d", &val);
+            if(val == 1)
+            {
+                sum += pow(2, i);
+                i--;
+            }
+            N--;
+        }
+        printf("%ld", sum);
+}
 */
