@@ -65,18 +65,18 @@ int main(int argc, char** argv)
 
 /*
 PY3:
-n=int(input())
-k=(n//2)
-for i in range(1,1+n):
-    for j in range((n//2)+1):
-        if j==0 or j==k:
-            print(i,end=' ')
-        else: print('*',end=' ')
+n = int(input())
+k = (n // 2)
+for i in range(1, 1 + n):
+    for j in range((n // 2) + 1):
+        if j == 0 or j == k:
+            print(i, end = ' ')
+        else: print('*', end = ' ')
     print()
-    if i<=n//2:
-        k-=1
+    if i <= n//2:
+        k -= 1
     else:
-        k+=1
+        k += 1
         
 C:
 
