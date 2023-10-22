@@ -65,6 +65,52 @@ int main(int argc, char** argv)
 
 /*
 PY3:
-
+n=int(input())
+k=(n//2)
+for i in range(1,1+n):
+    for j in range((n//2)+1):
+        if j==0 or j==k:
+            print(i,end=' ')
+        else: print('*',end=' ')
+    print()
+    if i<=n//2:
+        k-=1
+    else:
+        k+=1
+        
 C:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n, m;
+    scanf("%d", &n);
+    m = n/2 + 1;
+    int x = m;
+    for(int i=1; i<=n; i++)
+    {
+        for(int j=1; j<=m; j++)
+        {
+            if(j == x || j == 1)
+            {
+                printf("%d ", i);
+            }
+            else
+            {
+                printf("* ");
+            }
+        }
+        if(i <= n/2)
+        {
+            x--;
+        }
+        else
+        {
+            x++;
+        }
+        printf("\n");
+    }
+}
 */
