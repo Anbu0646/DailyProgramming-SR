@@ -41,8 +41,89 @@ Output: ab
 SOLUTION:
 */
 
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+string maxlength(string &s1, string &s2, int i, int len, string &ans, string &temp)
+{
+    if(i == len)
+    {
+        if(temp.size() > ans.size())
+            ans = temp;
+        return ans;
+    }
+  
+    if(s1[i] == s2[i])
+        temp += s1[i];
+  
+    if(s1[i] != s2[i])
+    {
+        if(temp.size() > ans.size())
+            ans = temp;
+        temp = "";
+    }
+  
+    return maxlength(s1, s2, i + 1, len, ans, temp);
+}
+
+int main(int argc, char** argv)
+{
+    string s1, s2, ans = "", temp = "";
+    getline(cin, s1);
+    getline(cin, s2);
+    
+    cout<<maxlength(s1, s2, 0, s1.size(), ans, temp);
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    char s1[1001], s2[1001];
+    scanf("%s\n%s", s1, s2);
+    int start = 0, end = 0, big = 0;
+    
+    for(int i = 0; i < strlen(s1); i++)
+    {
+        int c = 0, e = 0;
+        for(int j = i; j < strlen(s1); j++)
+        {
+            if(s1[j] == s2[j])
+            {
+                c++;
+                e = j;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(c > big)
+        {
+            big = c;
+            start = i;
+            end = e;
+        }
+    }
+    
+    for(int i = start; i <= end; i++)
+    {
+        printf("%c", s1[i]);
+    }
+}
+
+
+PY3:
+a = input().strip()
+b = input().strip()
+s = ""
+for i in range(len(a)):
+    for j in range(i + 1, len(a) + 1):
+        if(a[i:j] == b[i:j] and (j - i) > len(s)):
+            s = a[i:j]
+print(s)
 */
