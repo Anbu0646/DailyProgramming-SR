@@ -34,8 +34,61 @@ Output: tif fot tat
 SOLUTION:
 */
 
+#include <iostream>
+ 
+using namespace std;
+
+void replaceLastWord(string &str, int i, int n)
+{
+    if(i == n - 1)
+    {
+        cout<<str[0];
+        return;
+    }
+  
+    if(str[i + 1] == ' ')
+        cout<<str[i + 2];
+      
+    else
+        cout<<str[i];
+    
+    replaceLastWord(str, i + 1, n);
+}
+
+int main(int argc, char** argv)
+{
+    string str;
+    getline(cin, str);
+    replaceLastWord(str, 0, str.size());
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    char ch[1000];
+    scanf("%[^\n]%*c", ch);
+    
+    for(int i = 0; i < strlen(ch) - 1; i++)
+    {
+        if(ch[i + 1] == ' ') 
+           printf("%c", ch[i + 2]);
+        else 
+           printf("%c", ch[i]);
+    }
+    printf("%c",cch[0]);
+}
 
+PY3:
+l = list(map(str,input().split()))
+for i in range(len(l)):
+    z = list(l[i])
+    if i == len(l) - 1:
+        z[-1] = l[0][0]
+    else:
+        z[-1] = l[i + 1][0]
+    print(*z, sep = "", end = " ")
 */
