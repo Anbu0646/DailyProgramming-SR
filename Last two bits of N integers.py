@@ -55,8 +55,3 @@ for i in Arr:
     St += D
 
 print(int(St, 2))
-
-'''
-
-
-'''
