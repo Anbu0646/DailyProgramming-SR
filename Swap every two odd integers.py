@@ -42,3 +42,103 @@ Output: 7 4 3 89 21
 
 SOLUTION:
 '''
+
+n = int(input())
+li = list(map(int, input().split()))
+a = -1
+b = -1
+for i in range(n):
+    if li[i] % 2 == 1:
+        if a == -1:
+            a = i
+        else:
+            b = i
+            li[a], li[b] = li[b], li[a]
+            a, b = -1,-1
+print(*li)
+
+
+'''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int a[10001];
+
+void swap(int s, int e)
+{
+    int t = a[s];
+    a[s] = a[e];
+    a[e] = t;
+}
+
+int main()
+{
+    int n, f = 0, s, e;
+    scanf("%d ", &n);
+    
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ", &a[i]);
+        if(a[i] % 2 != 0 && f == 0)
+        {
+            s = i;
+            f = 1;
+        }
+        else if(a[i] % 2 != 0 && f == 1)
+        {
+            e = i;
+            swap(s, e);
+            f = 0;
+        }
+    }
+
+    for(int i = 0; i < n; i++) printf("%d ", a[i]);
+    
+}
+
+CPP:
+#include <iostream>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n, t;
+    cin>>n;
+    int a[n];
+
+    for(int i = 0; i < n; i++)
+    {
+        cin>>a[i];
+    }
+    
+    int o[n], d = 0;
+    
+    for(int i = 0; i < n; i++)
+    {
+        if(a[i] % 2 != 0)
+        {
+            o[d] = i;
+            d++;
+        }  
+    }
+    
+    if(d % 2 != 0)
+    {
+       d -= 2;
+    }
+  
+    for(int i = 0; i < d; i += 2)
+    {
+      t = a[o[i]];
+      a[o[i]] = a[o[i + 1]];
+      a[o[i + 1]] = t;
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<" ";
+    }
+}
+'''
