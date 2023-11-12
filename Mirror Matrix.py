@@ -45,8 +45,66 @@ Output:
 SOLUTION:
 '''
 
+a, b = map(int, input().split())
+x = []
+
+for i in range(a):
+    p = list(map(str, input().split()))
+    for i in range(b):
+        p[i] = p[i][::-1]
+    p = p[::-1]
+    x.append(p)
+  
+for i in range(a):
+    for j in range(b):
+        print(x[i][j], end = " ")
+    print()
 
 
+
+
+
+#Aliter:
+n, m = map(int, input().split())
+a = []
+for i in range(n):
+    a.append(list(map(str, input().split())))
+for i in range(n):
+    for j in range(m - 1, -1, -1):
+        print(a[i][j][::-1], end=" ")
+    print()
 '''
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
 
+int main(int argc, char** argv)
+{
+    int r, c;
+    cin>>r>>c;
+    string ar[r][c];
+    
+    for(int i = 0; i < r; i++)
+    {
+        vector<string> s;
+        for(int j = 0; j < c; j++)
+        {
+            string r;
+            cin>>ar[i][j];
+            r += ar[i][j];
+            reverse(r.begin(), r.end());
+            s.push_back(r);
+        }
+        
+        reverse(s.begin(), s.end());
+        
+        for(auto i:s)
+        {
+            cout<<i<<" ";
+        }
+        
+        cout<<endl;
+    }
+}
 '''
