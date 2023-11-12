@@ -38,9 +38,79 @@ eeee
 SOLUTION:
 '''
 
+s = input('')
+for i in range(0, len(s)):
+    print(s[i] * (i + 1) + s[i + 1:])
 
 
+a = input().strip()
+for i in range(len(a)):
+    for j in range(len(a)):
+        if i < j:
+            print(a[j], end = "")
+        else:
+            print(a[i], end = "")
+    print()
 '''
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    
+    for(int i = 0; i < s.length(); i++)
+    {
+        if(i == 0) cout<<s<<endl;
+        else if(i > 0) 
+        {
+            int c = 0;
+            while(c < s.length())
+            {
+                if(c <= i)
+                {
+                     cout<<s[i];
+                }
+                else if(c > i)
+                {
+                    cout<<s.substr(i + 1, s.length())<<endl;
+                    break;
+                }
+                c++;
+            }
+        }     
+    }
+}
 
 
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[101];
+    scanf("%s", s);
+    
+    int len = strlen(s);
+    
+    for(int i = 0; i < len; i++)
+    {
+        for(int j = 0; j < len; j++)
+        {
+            if(j <= i)
+            {
+                printf("%c", s[i]);
+            }
+            else
+            {
+                printf("%c", s[j]);
+            }
+        }
+        printf("\n");
+    }
+}
 '''
