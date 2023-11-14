@@ -36,9 +36,103 @@ Output: [as[DF]er]
 SOLUTION:
 '''
 
-
+S = input().strip()
+wrds = []
+for i in range(len(S)):
+    if(S[i] == '['):
+        s2 = S[i]
+        for j in range(i + 1, len(S)):
+            s2 += S[j]
+            if(S[j] in "[]"):
+                break
+        if(s2.startswith("[") and s2.endswith("]")):
+            wrds.append(s2)
+for i in wrds:
+    S = S.replace(i, i.upper())
+print(S)
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+void strConverter(int start, int end, char *str)
+{
+    for(int i = start; i < end; i++)
+    {
+        if(!isalnum(str[i]) && str[i] != ' ')
+        {
+            return;
+        }
+    }
+    
+    for(int i = start; i < end; i++)
+    {
+        str[i] = toupper(str[i]);
+    }
+}
+
+int main()
+{
+    char str[1001];
+    scanf("%[^\n]", str);
+    int s = -1;
+    
+    for(int i = 0; i < strlen(str); i++)
+    {
+        if(str[i] == '[')
+        {
+            s = i + 1;
+        }
+        if(str[i] == ']')
+        {
+            if(s == -1)
+            {
+                continue;
+            }
+            strConverter(s, i, str);
+        }
+    }
+    printf("%s", str);
+}
 
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    getline(cin, s);
+    bool caps = false;
+    for(int i = 0; i < s.length(); i++)
+    {
+        if(caps)
+        {
+            cout<<(char)toupper(s[i]);
+        }
+        else
+        {
+            cout<<s[i];
+        }
+        if(s[i] == '[')
+        {
+            int j = i + 1;
+            while(j < s.length() && s[j] != ']' && s[j] != '[')
+            {
+                j++;
+            }
+            if(s[j] == ']')
+            {
+                caps = true;
+            }
+        }
+        else if(s[i] == ']')
+        {
+            caps = false;
+        }
+    }
+}
 '''
