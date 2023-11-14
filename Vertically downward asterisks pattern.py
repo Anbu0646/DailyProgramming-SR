@@ -37,7 +37,15 @@ Output:
 SOLUTION:
 '''
 
+Liz = list(map(int, input().split()))
 
+for i in range(max(Liz)):
+    for j in Liz:
+        if i < j:
+            print('*', end = "")
+        else:
+            print('-', end = "")
+    print()
 
 '''
 
