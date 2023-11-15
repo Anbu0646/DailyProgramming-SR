@@ -48,6 +48,81 @@ for i in range(max(Liz)):
     print()
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int arr[100], k = 0, sum = 0;
+    
+    while(scanf("%d ", &arr[k++]) > 0)
+    {
+        k--;
+        
+        if(arr[k] > sum)
+        {
+            sum = arr[k];
+        }
+        
+        k++;
+        
+    }
+    
+    k--;
+    
+    for(int i = 0; i < sum; i++)
+    {
+        for(int j = 0; j < k; j++)
+        {
+            if(arr[j] > 0)
+            {
+                printf("*");
+                arr[j]--;
+            }
+            else
+            {
+                printf("-");
+            }
+        }
+        printf("\n");
+    }
+}
 
 
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+
+    vector<int> v;
+    int temp;
+    int mx = -1;
+
+    while(cin>>temp) 
+    {
+        v.push_back(temp);
+        mx = max(mx, temp);
+    }
+
+    for(int i = 0; i < mx; i++)
+    {
+        for(int j = 0; j < v.size(); j++)
+        {
+            if(v[j])
+            {
+                cout<<"*";
+                v[j]--;
+            }
+            else
+            {
+                cout<<"-";
+            }
+        }
+        cout<<endl;
+    }
+}
 '''
