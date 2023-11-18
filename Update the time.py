@@ -42,9 +42,64 @@ Output: 00:05
 SOLUTION:
 '''
 
-
+h, m = map(int, input().split(':'))
+x = int(input())
+m += x
+while m > 59:
+    m -= 60
+    h += 1
+while h > 23:
+    h -= 24
+print(f'{h:02d}:{m:02d}')
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+   int h, m1;
+   long int m2;
+   scanf("%02d:%02d\n%ld", &h, &m1, &m2);
+   if(m1 + m2 >= 60)
+   {
+      h += (m1 + m2) / 60;
+      m1 = (m1 + m2) % 60; 
+      if(h >= 24) 
+         h %= 24;
+   }
+   else
+   {
+      m1 = m1 + m2;
+   }
+    printf("%02d:%02d", h, m1);
+}
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int a, b, c;
+    scanf("%d:%d", &a, &b);
+    cin>>c;
+    int d = a * 60 + b + c;
+    int e = (d / 60) % 24, f = d % 60;
+    if (e >= 24) 
+        e -= 24;
+    else 
+        int x = 1;
+    if(e < 10) 
+       cout<<"0"<<e;
+    else 
+       cout<<e;
+       cout<<":";
+    if(f < 10) 
+       cout<<"0"<<f;
+    else 
+       cout<<f;
+}
 '''
