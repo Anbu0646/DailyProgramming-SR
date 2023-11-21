@@ -39,7 +39,68 @@ for i in S:
 print(S1)
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1001], val[1001];
+    int len, ind = 0;
+    scanf("%s%n", s, &len);
+    
+    for(int i = 0; i < len; i++)
+    {
+        if(s[i] == '{' || s[i] == '}' || s[i] == '[' || s[i] == ']' || s[i] == '(' || s[i] == ')')
+        {
+            continue;
+        }
+        else
+        {
+            val[ind++] = s[i];
+        }
+    }
+    
+    val[ind] = '\0';
+    printf("%s", val);
+}
 
 
 
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[1001];
+    scanf("%s", s);
+    
+    for(int i = 0; i < strlen(s); i++)
+    {
+        if(s[i] == '[' || s[i] == ']' || s[i] == '(' || s[i] == ')' || s[i] == '{' || s[i] == '}')
+        {
+            continue;
+        }
+        else
+        {
+            printf("%c", s[i]);
+        }
+    }
+}
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    for(auto &it:s)
+    {
+        if(isalpha(it))cout<<it;
+    }
+}
 '''
