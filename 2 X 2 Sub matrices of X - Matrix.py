@@ -71,9 +71,85 @@ Output:
 SOLUTION:
 '''
 
-
-
+x, y = map(int, input().split())
+mj = [list(map(int, input().split())) for i in range(x)]
+a = int(input())
+for i in range(x - 1):
+    for j in range(y - 1):
+        if mj[i][j] == a or mj[i + 1][j] == a or mj[i][j +1 ] == a or mj[i + 1][j + 1] == a:
+            print(mj[i][j], mj[i][j + 1])
+            print(mj[i + 1][j], mj[i + 1][j + 1])
+            
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int m, n, x; 
+    scanf("%d %d\n", &m, &n); 
+    int arr[m][n]; 
+    
+    for(int i = 0 ; i < m ; i++)
+    {
+        for(int j = 0 ; j < n ; j++)
+        {
+            scanf("%d ", &arr[i][j]);
+        }
+    }
+    
+    scanf("%d", &x); 
+    
+    for(int i = 0 ; i < m - 1 ; i++)
+    {
+        for(int j = 0 ; j < n - 1 ; j++)
+        {
+            if(arr[i][j] == x || arr[i + 1][j] == x || arr[i][j + 1] == x || arr[i + 1][j + 1] == x)
+            {
+                printf("%d %d \n %d %d\n", arr[i][j], arr[i][j + 1], arr[i + 1][j], arr[i + 1][j + 1]);
+            }
+        }
+    }
+}
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    
+    int r,c;
+    cin >> r >> c;
+    
+    
+    int mat[r][c];
+    for(int i = 0; i < r; i++)
+    {
+        for(int j = 0; j < c; j++)
+        {
+            cin >> mat[i][j];
+        }
+    }
+    
+    int e;
+    cin >> e;
+    
+    
+    for(int i = 0; i < r - 1; i++)
+    {
+        for(int j = 0; j < c - 1; j++)
+        {
+            if(mat[i][j] == e or mat[i + 1][j] == e or mat[i][j + 1] == e or mat[i + 1][j + 1] == e)
+            {
+                cout << mat[i][j] << " " << mat[i][j + 1] << endl;
+                cout << mat[i + 1][j] << " " <<mat[i + 1][j + 1] << endl;
+            }
+            
+        }
+    }
+
+}
 '''
