@@ -42,8 +42,68 @@ Output: INVALID
 SOLUTION:
 '''
 
-
+s1 = input()
+s2 = input()
+ctr = 0
+for i in s2:
+    if i in s1:
+        ctr += 1
+        break
+if(ctr != 0):
+    print("INVALID")
+else:
+    print("VALID")
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    char u[51], p[21];
+    scanf("%s\n %s", u, p);
+    for(int i = 0; i < strlen(u); i++)
+    {
+        for(int j = 0; j < strlen(p); j++)
+        {
+            if(u[i] == p[j])
+            {
+                printf("INVALID");
+                return 0;
+            }
+        }
+    }
+    printf("VALID");
+}
+
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s, x;
+    
+    cin>>s>>x;
+    
+    int f = 0;
+
+    for(int i = 0; i < s.length(); i++)
+    {
+        if(x.find(s[i]) == string::npos) 
+           f = 1;
+        else
+        {
+            f = 0;
+            break;
+        }
+    }
+    
+    if(f) cout<<"VALID";
+    else cout<<"INVALID";
+    
+}
 '''
