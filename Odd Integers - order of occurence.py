@@ -68,7 +68,74 @@ for i in range(n):
       
 '''
 C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    int av[n];
+    
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ", &arr[i]);
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ", &av[i]);
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] % 2 != 0)
+        {
+            printf("%d ", arr[i]);
+        }
+        if(av[i] % 2 != 0)
+        {
+            printf("%d ", av[i]);
+        }
+    }
+}
 
 CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int a[n], b[n];
+    
+    for(int i = 0; i < n; i++)
+    {
+        cin>>a[i];
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        cin>>b[i];
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        if(a[i] % 2 != 0 && b[i] % 2 !=0)
+        {
+            cout<<a[i]<<" "<<b[i]<<" ";
+        }
+        else if(a[i] % 2 != 0)
+        {
+            cout<<a[i]<<" ";
+        }
+        else if(b[i] % 2 != 0)
+        {
+            cout<<b[i]<<" ";
+        }
+    }
+}
 '''
