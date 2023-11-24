@@ -56,8 +56,19 @@ Output: 3 1 7 9
 SOLUTION:
 '''
 
+n = int(input())
+l1 = list(map(int, input().split()))
+l2 = list(map(int, input().split()))
 
+for i in range(n):
+    if l1[i] % 2 != 0:
+        print(l1[i], end = ' ')
+    if l2[i] % 2 != 0:
+        print(l2[i], end = ' ')
+      
 '''
+C:
 
 
+CPP:
 '''
