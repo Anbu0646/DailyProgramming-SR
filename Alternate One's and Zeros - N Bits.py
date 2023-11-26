@@ -51,7 +51,72 @@ else:
     
 print(int(BV, 2))
 
+
+
+
+
+n = int(input())
+s = ''
+for i in range(0, n):
+    if i % 2 == 0:
+        s += "1"
+    else:
+        s += "0"
+print(int(s, 2))
+
+
+n = int(input())
+a = '10'
+s = a*(n)
+d = s[:n]
+print(int(d, 2))
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    long long int n, c = 1, s = 0, t;
+    scanf("%lld", &n);
+    if(n % 2 != 0) 
+       t = 1;
+    else t = 2;
+    while(c <= n)
+    {
+        s += t;
+        t *= 4;
+        c += 2;
+    }
+    printf("%lld", s);
+}
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    vector<int> vec;
+    for(int i = 0; i < n; i++)
+    {
+        if(i % 2 == 0)
+        {
+            vec.push_back(1);
+        }
+        else
+        {
+            vec.push_back(0);
+        }
+    }
+    long sum = 0, c = 0;
+    for(int i = n - 1; i >= 0; i--)
+    {
+        sum += (vec[i] * (long)pow(2, c++));
+    }
+    cout<<sum;
+}
 '''
