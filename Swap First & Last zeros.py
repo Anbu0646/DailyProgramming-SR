@@ -31,9 +31,23 @@ Output: 3000
 SOLUTION:
 '''
 
+X, Y = input().split()
 
+FD = X[0]
+
+for i in range(len(Y) - 1, -1, -1):
+    if Y[i] != '0':
+        LD = Y[i]
+        index = i
+        break
+
+SFD = LD + X[1:]
+SLD = Y[:index] + FD + Y[index + 1:]
+
+print(int(SFD) + int(SLD))
 
 '''
+
 
 
 '''
