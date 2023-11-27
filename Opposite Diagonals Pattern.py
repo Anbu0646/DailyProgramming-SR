@@ -68,8 +68,82 @@ Output:
 SOLUTION:
 '''
 
+n = int(input())
+m = []
+for i in range(n):
+    row = input().split()
+    m.append(row)
+    
+for i in range(n):
+    for j in range(i + 1):
+        print(m[j][i - j], end = ' ')
+    print()
 
+for i in range(1, n):
+    for j in  range(i, n):
+        print(m[j][n + i - j - 1], end = ' ')
+    print()
+  
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    int arr[n][n];
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            scanf("%d", &arr[i][j]);
+    for(int i = 0; i < n; i++)
+    {
+        for(int k = 0, j = i; k <= i, j >= 0; k++, j--)
+            printf("%d ", arr[k][j]);
+        printf("\n");
+    }
+    for(int i = 1; i < n; i++)
+    {
+        for(int k = i, j = n - 1; k < n, j >= i; k++, j--)
+            printf("%d ", arr[k][j]);
+        printf("\n");
+    }
+}
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int n;
+    cin>>n;
+    int mat[n][n];
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cin>>mat[i][j];
+        }
+    }
+    map<int, vector<int>>m;
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            int sum = i + j;
+            m[sum].push_back(mat[i][j]);
+        }
+    }
+    for(auto i:m)
+    {
+        for(auto j:i.second)
+        {
+            cout<<j<<" ";
+        }
+        cout<<endl;
+    }
+}
 '''
