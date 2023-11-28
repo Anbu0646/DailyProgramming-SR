@@ -47,7 +47,60 @@ SLD = Y[:index] + FD + Y[index + 1:]
 print(int(SFD) + int(SLD))
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char a[1000], b[1000];
+    scanf("%s %s", a, b);
+    int c, d, k;
+    int l = strlen(b);
+    
+    for(int i = l - 1; i >= 0; i--)
+    {
+        if(b[i] > '0')
+        {
+            k = i;
+            break;
+        }
+    }
+    
+   a[0] = a[0] + b[k] - (b[k] = a[0]);
+   printf("%ld ", atol(a) + atol(b));
+    
+}
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string x, y;
+    cin>>x>>y;
+    char c = x[0], m;
+    int i = y.length() - 1;
+    while(i >= 0)
+    {
+        if(y[i] == '0') 
+           i--;
+        else
+        {
+            m = y[i];
+            y[i] = c;
+            x[0] = m;
+            
+            break;
+        }
+    }
+    
+    int a = stoi(x);
+    int b = stoi(y);
+    cout<<a + b;
 
 
-
+}
 '''
