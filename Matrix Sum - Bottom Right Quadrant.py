@@ -60,6 +60,69 @@ for i in range(R // 2, R):
 print(Sum)
 
 '''
+C:
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int x, y;
+    scanf("%d %d", &x, &y);
+    int arr[x][y];
+    
+    for(int i = 0; i < x; i++)
+    {
+        for(int j = 0; j < y; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    
+    int t = 0;
+    
+    for(int i = (x / 2); i < x; i++)
+    {
+        for(int j = (y / 2); j < y; j++)
+        {
+            t += arr[i][j];
+        }
+    }
+    
+    printf("%d", t);
+}
 
 
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    int m, n;
+    cin>>m>>n;
+    int mat[m][n];
+    
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            cin>>mat[i][j];
+        }
+    }
+    
+    int r = m - (m / 2);
+    int c = n - (n / 2);
+    int sum = 0;
+    
+    for(int i = r; i < m; i++)
+    {
+        for(int j = c; j < n; j++)
+        {
+            sum += mat[i][j];
+        }
+    }
+    
+    cout<<sum;
+}
 '''
