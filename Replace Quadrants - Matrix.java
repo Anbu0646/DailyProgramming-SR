@@ -79,7 +79,125 @@ Output:
 SOLUTION:
 */
 
+import java.util.*;
+public class Hello 
+{    
+    public static void main(String[] args) 
+    {
+		    Scanner sc = new Scanner(System.in);
+		    int n = sc.nextInt();
+		    int arr[][] = new int[n][n];
+		    for(int i = 0; i < n; i++) 
+        {
+		        for(int j = 0; j < n; arr[i][j++] = sc.nextInt());
+		    }
+		    for(int i = 0; i < n; i++) 
+        {
+		        for(int j = 0; j < n; j++) 
+            {
+		            if(i < n / 2 && j >= n / 2) 
+		            { 
+                   System.out.print(arr[i + (n / 2)][j - (n / 2)] + " "); 
+                }
+		            else if(i >= n / 2 && j >= n / 2) 
+		            { 
+                   System.out.print(arr[i - (n / 2)][j - (n / 2)] + " "); 
+                }
+		            else System.out.print(arr[i][j] + " ");
+		        }
+		        System.out.println();
+		    }
+    	}
+}
 
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int n, i;
+    scanf("%d", &n);
+    int a[n][n];
+    for(i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for(i = 0; i < n / 2; i++)
+    {
+        for(int j = 0; j < n / 2; j++)
+        {
+            a[i][j + n / 2] = a[i + n / 2][j];
+            a[i + n / 2][j + n / 2] = a[i][j];
+        }
+    }
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            printf("%d ", a[i][j]);
+        }
+        puts("");
+    }
+    return;
+}
+
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+   int n;
+   cin>>n;
+   int a[n][n];
+   for(int i = 0; i < n; i++)
+   {
+       for(int j = 0; j < n; j++)
+       {
+           cin>>a[i][j];
+       }
+   }
+   for(int i = n / 2; i < n; i++)
+   {
+       for(int j = n / 2; j < n; j++)
+       {
+           a[i][j] = a[i - n / 2][j - n / 2];
+       }
+   }
+   for(int i = 0; i < n / 2; i++)
+   {
+       for(int j = n / 2; j < n; j++)
+       {
+           a[i][j] = a[i + n / 2][j - n / 2];
+       }
+   }
+   for(int i = 0; i < n; i++)
+   {
+       for(int j = 0; j < n; j++)
+       {
+           cout<<a[i][j]<<" ";
+       }
+       cout<<endl;
+   }
+}
+
+
+PY3:
+n = int(input())
+lis = [input().split() for _ in range(n)]
+half = n//2
+for i in range(half):
+    for j in range(half):
+        lis[half + i][half + j] = lis[i][j]
+        lis[i][half + j] = lis[half + i][j]
+for i in lis:
+    print(*i)
+        
 */
