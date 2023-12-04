@@ -28,14 +28,34 @@ Output: 614151
 SOLUTION:
 */
 
+import java.util.*;
+public class Hello 
+{
+    public static void main(String[] args) 
+    {
+		Scanner sc = new Scanner(System.in);
+		String t = sc.nextLine();
+		int l = t.length(), n = Integer.parseInt(t), z = 0, k = t.length();
+		while(l --> 0) 
+        {
+		    t = t.charAt(k - 1) + t.substring(0, k - 1);
+		    n = Integer.parseInt(t);
+		    if(n > z) 
+               z = n;
+		}
+		System.out.print(z);
+	}
+}
+
+/*
+PY3:
 a = input().strip()
 p = []
 for i in range(len(a)):
     a = a[-1] + a[:-1]
     p.append(int(a))
 print(max(p))    
-  
-/*
+
 C:
 #include<stdio.h>
 #include<stdlib.h>
