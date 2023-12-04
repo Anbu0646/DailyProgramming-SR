@@ -28,8 +28,60 @@ Output: 614151
 SOLUTION:
 */
 
-
-
+a = input().strip()
+p = []
+for i in range(len(a)):
+    a = a[-1] + a[:-1]
+    p.append(int(a))
+print(max(p))    
+  
 /*
+C:
+#include<stdio.h>
+#include<stdlib.h>
 
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    int temp = a;
+    int i = 0;
+    while(a / 10 != 0)
+    {
+        a /= 10;
+        i++;
+    }
+    a = temp;
+    int s = temp;
+    do
+    {
+        if(temp > s)
+        s = temp;
+        temp = temp / 10 + ((temp % 10) * pow(10, i));
+       
+    }
+    while(temp != a);
+    printf("%d", s);
+    return;
+}
+
+CPP:
+#include <bits/stdc++.h>
+ 
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    string s;
+    cin>>s;
+    string maxx = "0";
+    for(int i = 0; i < s.size(); i++)
+    {
+        maxx = max(maxx,s);
+        char x = s[s.size() - 1];
+        s.insert(s.begin(), x);
+        s.pop_back();
+    }
+    cout<<maxx;
+}
 */
