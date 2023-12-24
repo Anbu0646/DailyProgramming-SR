@@ -38,8 +38,52 @@ Output: j
 SOLUTION:
 */
 
+using System;
+ 
+namespace Hello
+{
+	class Hello
+	{
+		public static void Main (string[] args)
+		{
+			string s = Console.ReadLine();
+			int i = 0, j = s.Length, n = j, o = 1;
+    		while(i <= j && i < n && j > 0)
+                {
+    			if(j - i >= o)
+                        {   
+    			    if(o % 2 == 1)
+                            {
+    			        Console.Write(s.Substring(i, o));
+    			        i += o;
+    			    }
+    			    else
+                            {
+    			        Console.Write(s.Substring(j - o, o));
+    			        j -= o;
+    			    }
+    			    o++;
+    			}
+    			else
+                        {
+    			    Console.Write(s.Substring(i, j - i));break;
+    			}
+			        Console.WriteLine();
+			}
+		}
+	}
+}
 
 /*
-
-
+PY3:
+n = input().strip()
+ct = 1
+while n:
+    if ct & 1:
+        print(n[:ct])
+        n = n[ct:]
+    else:
+        print(n[-ct:])
+        n = n[:-ct]
+    ct += 1 
 */
